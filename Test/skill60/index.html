@@ -275,35 +275,39 @@
                             <tbody>
                                 <tr>
                                     <td>on click</td>
-                                    <td id="click_text"></td>
+                                    <td id="click_text">waiting</td>
                                 </tr>
                                 <tr>
                                     <td>on dblclick</td>
-                                    <td id="dblclick_text"></td>
+                                    <td id="dblclick_text">waiting</td>
                                 </tr>
                                 <tr>
                                     <td>on keydown</td>
-                                    <td id="keydown_text"></td>
+                                    <td id="keydown_text">waiting</td>
                                 </tr>
                                 <tr>
                                     <td>on keypress</td>
-                                    <td id="keypress_text"></td>
+                                    <td id="keypress_text">waiting</td>
+                                </tr>
+                                <tr>
+                                    <td>on keyup</td>
+                                    <td id="keyup_text">waiting</td>
                                 </tr>
                                 <tr>
                                     <td>on mousedown</td>
-                                    <td id="mousedown_text"></td>
+                                    <td id="mousedown_text">waiting</td>
                                 </tr>
                                 <tr>
                                     <td>on mouseover</td>
-                                    <td id="mouseover_text"></td>
+                                    <td id="mouseover_text">waiting</td>
                                 </tr>
                                 <tr>
                                     <td>on mouseout</td>
-                                    <td id="mouseout_text"></td>
+                                    <td id="mouseout_text">waiting</td>
                                 </tr>
                                 <tr>
                                     <td>on mouseup</td>
-                                    <td id="mouseup_text"></td>
+                                    <td id="mouseup_text">waiting</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -599,6 +603,69 @@
             let row = btn.parentNode.parentNode;
             row.parentNode.removeChild(row);
         }
+
+        $('#event_text').click(function (e) { 
+            $('#click_text').html('onClick')
+            setTimeout(() => {
+                $('#click_text').html('waiting')
+            }, 500);
+        });
+
+        $('#event_text').dblclick(function (e) { 
+            $('#dblclick_text').html('onDblclick')
+            setTimeout(() => {
+                $('#dblclick_text').html('waiting')
+            }, 500);
+        });
+
+        $('#event_text').keydown(function (e) { 
+            $('#keydown_text').html('onKeydown')
+            setTimeout(() => {
+                $('#keydown_text').html('waiting')
+            }, 1000);
+        });
+
+        $('#event_text').keypress(function (e) { 
+            $('#keypress_text').html('onKeypress')
+            setTimeout(() => {
+                $('#keypress_text').html('waiting')
+            }, 1000);
+        });
+
+        $('#event_text').keyup(function (e) { 
+            $('#keyup_text').html('onKeyup')
+            setTimeout(() => {
+                $('#keyup_text').html('waiting')
+            }, 1000);
+        });
+
+        $('#event_text').mousedown(function () { 
+            $('#mousedown_text').html('onMousedown')
+            setTimeout(() => {
+                $('#mousedown_text').html('waiting')
+            }, 1000);
+        });
+
+        $('#event_text').mouseover(function () { 
+            $('#mouseover_text').html('onMouseover')
+            setTimeout(() => {
+                $('#mouseover_text').html('waiting')
+            }, 1000);
+        });
+
+        $('#event_text').mouseout(function () { 
+            $('#mouseout_text').html('onMouseout')
+            setTimeout(() => {
+                $('#mouseout_text').html('waiting')
+            }, 1000);
+        });
+
+        $('#event_text').mouseup(function () { 
+            $('#mouseup_text').html('onMouseup')
+            setTimeout(() => {
+                $('#mouseup_text').html('waiting')
+            }, 1000);
+        });
 
         $(document).ready(function () {
 
