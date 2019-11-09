@@ -324,10 +324,10 @@
                 <div id="radio_list">
                     <div class="w3-row">
                         <div class="w3-col l2">
-                            <input id="radio_num1" class="w3-input w3-section" type="text" name="radio_num1" placeholder="number-1"> 
+                            <input id="radio_num1" class="w3-input w3-section" type="number" name="radio_num1" placeholder="number-1"> 
                         </div>
                         <div class="w3-col l2">
-                            <input id="radio_num2" class="w3-input w3-section" type="text" name="radio_num2" placeholder="number-2"> 
+                            <input id="radio_num2" class="w3-input w3-section" type="number" name="radio_num2" placeholder="number-2"> 
                         </div>
                     </div>
 
@@ -341,7 +341,7 @@
                     <label>หาร</label>
                 </div>
 
-                <h2><p>มีค่าเท่ากับ <span id="radio_text">0</span></p></h2>
+                <h2><p>มีค่าเท่ากับ <span id="radio_text">99999</span></p></h2>
             </div>
             </div>
         </div>
@@ -647,6 +647,28 @@
             }, 1000);
         });
 
+        /**
+         * ข้อที่ 13
+         */
+        $('#radio_list').change(function (e) { 
+            
+            num1 = $('#radio_num1').val()
+            num2 = $('#radio_num2').val()
+            sum=0
+
+            if(num1==''){
+                alert('ใส่ค่าที่ 1')
+            }else   if(num2==''){
+                alert('ใส่ค่าที่ 2')
+            }
+
+            $('#radio_plus').prop('checked')==true?sum = +num1 + +num2:0
+            $('#radio_minus').prop('checked')==true?sum = +num1 - +num2:0
+            $('#radio_multi').prop('checked')==true?sum = +num1 * +num2:0
+            $('#radio_divide').prop('checked')==true?sum = +num1 / +num2:0
+            
+            $('#radio_text').html(sum);
+        });
         $(document).ready(function () {
 
         });
