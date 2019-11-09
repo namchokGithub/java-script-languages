@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Javascript Event | 04 - Event handler property</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../js.png" />
+    </head>
+    <body>
+        <!------------------------------------------------------------------ บทที่ 4 -------------------------------------------------------------------->
+        <h1>04 - Event handler property</h1>
+        <p>ศึกษาต่อที่ <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">developer.mozilla</a> ในเมนูของ Property</p>
+        <input type="button" value="Click me" id="elem">
+        <input type="button" value="Click me" id="elem2">
+
+        <script>
+            elem.onclick=function(event){
+                alert(event.type + " at " + event.currentTarget)
+                alert("พิกัด: " + event.clientX + ":" + event.clientY)
+                console.log(event)
+            }
+            elem2.addEventListener('click',{
+                handleEvent(event){
+                    alert(event.type + " at " + event.currentTarget)
+                    alert("พิกัด: " + event.clientX + " : " + event.clientY)
+                }
+            })
+        </script>
+        <!---------------------------------------------------------------------------------------------------------------------------------------------->
+        <div for="Menu control">
+            <marquee behavior="scroll" direction="down" scrollamount="5">
+                <h2>
+                    <font color="red">
+                        อย่าลืม!! เปิด Console กด
+                        <span>
+                            <font color="green" size="30px">F12</font>
+                        </span>
+                        นะคะ เด็กๆ
+                    </font>
+                </h2>
+            </marquee>
+            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="console.clear();">Clear console log</button>
+            <button onclick="window.location.reload()">Refresh</button>
+        </div>
+    </body>
+</html>

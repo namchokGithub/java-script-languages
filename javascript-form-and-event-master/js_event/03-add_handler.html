@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Javascript Event | 03 - Add handler</title>
+        <link href="../js.png" rel="shortcut icon" type="image/x-icon"/>
+    </head>
+    <body>
+        <!------------------------------------------------------------- บทที่ 3 ------------------------------------------------------------------------->
+        <h1>03 - Add handler</h1>
+        <p>event listenter (ตัวฟังเหตุการณ์)</p>
+        <p>การเพิ่ม Event มี method คือ addEventListener ( "eventName", function_name, capture );</p>
+        <p>
+            ตัวแปร capture ถ้ากำหนด true คือ จะโหลด function ไว้ที่หน่วยความจำเพื่อรอการเรียกใช้ตั้งแต่การโหลด page แต่ถ้ากำหนด false คือ จะโหลด function เฉพาะตอนที่มีการเรียกใช้ event นั้นๆ
+        </p>
+        <input id="elem" type="button" value="คลิกที่ฉัน">
+
+        <div>
+            <div>
+                <div>
+                    <p>ทดสอบ</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function handler1() {
+                alert('Event ที่ 1');
+            }
+            function handler2() {
+                alert('Event ที่ 2');
+            }
+
+            elem.onclick = function () {
+                alert('สวัสดี คุณคลิกที่ฉัน')
+            }
+            elem.addEventListener('click', handler1, true);
+            elem.addEventListener('click', handler2);
+            elem.addEventListener('click', function(){alert('Event สุดท้าย')}, false);
+
+            document.getElementsByTagName("div")[0].addEventListener("click", function(){alert('parent 0')}, false);
+            document.getElementsByTagName("div")[1].addEventListener("click", function(){alert('parent 1')}, false);
+            document.getElementsByTagName("div")[2].addEventListener("click", function(){alert('parent 2')}, false);
+            document.getElementsByTagName("p")[3].addEventListener("click", function(){alert('child')}, false);
+        </script>
+        <!---------------------------------------------------------------------------------------------------------------------------------------------->
+
+        <div for="Menu control">
+            <marquee behavior="scroll" direction="down" scrollamount="5">
+                <h2>
+                    <font color="red">
+                        อย่าลืม!! เปิด Console กด
+                        <span>
+                            <font color="green" size="30px">F12</font>
+                        </span>
+                        นะคะ เด็กๆ
+                    </font>
+                </h2>
+            </marquee>
+            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="console.clear();">Clear console log</button>
+            <button onclick="window.location.reload()">Refresh</button>
+        </div>
+    </body>
+</html>

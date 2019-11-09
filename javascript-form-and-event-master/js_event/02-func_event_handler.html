@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <title>JS Event | 02 - Function event handler</title>
+        <link href="../js.png" rel="shortcut icon" type="image/x-icon"/>
+    </head>
+    <body
+        onresize="resize()">
+
+        <!------------------------------------------------------------- บทที่ 2 --------------------------------------------------------->
+        <h1>02 - Function event handler</h1>
+        <input id="elem" type="button" value="Click me">
+        <input id="elem2" type="button" value="Say Thank">
+        <input id="elemDbClick" type="button" value="Double click me">
+
+        <div>
+            <p>Result resize window :
+            </p>
+            <p id="resize_window"></p>
+        </div>
+
+        <div>
+            <span id="mouseDown">คลิกที่ข้อความ</span>
+        </div>
+        <script>
+            elem.onclick = function () {
+                alert('Click Me')
+            }
+            elemDbClick.ondblclick = function () {
+                alert('Double click Me')
+            }
+            mouseDown.onmousedown = function () {
+                alert('คลิกทำไม')
+            }
+
+            // แบบฟังก์ชัน
+            function sayThanks() {
+                alert('Thanks');
+            }
+            elem2.onclick = sayThanks
+
+            function resize() {
+                var w = window.outerWidth;
+                var h = window.outerHeight;
+                var txt = "Window size: width=" + w + ", height=" + h;
+                document.getElementById("resize_window").innerHTML = txt;
+            }
+        </script>
+        <!------------------------------------------------------------------------------------------------------------------------------->
+        <div for="Menu control">
+            <marquee behavior="scroll" direction="down" scrollamount="5">
+                <h2>
+                    <font color="red">
+                        อย่าลืม!! เปิด Console กด
+                        <span>
+                            <font color="green" size="30px">F12</font>
+                        </span>
+                        นะคะ เด็กๆ
+                    </font>
+                </h2>
+            </marquee>
+            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="console.clear();">Clear console log</button>
+            <button onclick="window.location.reload()">Refresh</button>
+        </div>
+        <div for="Detail for event">
+            <p>
+                Event Handler (อีเวนท์ แฮน’เดลอะ) คือ การจัดการ/ตรวจสอบเหตุการณ์ต่อพฤติกรรมของผู้ที่เข้ามาใช้งาน Web Page
+            </p>
+            <p>
+                <font color="red">* ถ้าใช้งานไม่ได้ให้นำ
+                    <font color="#009933">
+                        <b>Keyword</b>
+                    </font>
+                    ไปค้นหาในอินเทอร์เน็ต</font>
+            </p>
+            <p>
+                หรือไปที่
+                <a href="https://www.quackit.com/javascript/javascript_event_handlers.cfm">quackit.com/javascript/javascript_event_handlers</a>
+            </p>
+            <table border="3" cellpadding="2" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <th colspan="2">
+                            Event Handler
+                        </th>
+                    </tr>
+                    <tr>
+                        <th width="20%">Event Name</th>
+                        <th>ความหมาย</th>
+                    </tr>
+                    <tr>
+                        <td>onAbort</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อผู้ใช้งานเว็บเพจมีการขัดจังหวะการทำงานของเว็บเพจ</td>
+                    </tr>
+                    <tr>
+                        <td>onChange</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการเปลี่ยนแปลงข้อมูลภายใน input</td>
+                    </tr>
+                    <tr>
+                        <td>onClick</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีผู้ใช้งานเว็บเพจทำการ Click ที่ Object นั้น
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ondblClick</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีผู้ใช้งานเว็บเพจ ทำการ Double Click ที่ Object นั้น
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onDragDrop</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการลากและปล่อย Mouse</td>
+                    </tr>
+                    <tr>
+                        <td>onError</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อเว็บเพจมีการ Error</td>
+                    </tr>
+                    <tr>
+                        <td>onFocus</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการโฟกัสไปยัง Object นั้น</td>
+                    </tr>
+                    <tr>
+                        <td>onKeyDown</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการกดปุ่มบน Keyboard</td>
+                    </tr>
+                    <tr>
+                        <td>onKeyPress</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการกดปุ่มใด ๆ บน Keyboard</td>
+                    </tr>
+                    <tr>
+                        <td>onKeyUp</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อผู้ใช้ปล่อยมืออกจากปุ่มกดบน Keyboard</td>
+                    </tr>
+                    <tr>
+                        <td>onMouseDown</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อผู้ใช้งานกด Mouse ลง</td>
+                    </tr>
+                    <tr>
+                        <td>onMouseOut</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อนำ Mouse ออกจาก Object หรือบริเวณที่กำหนด</td>
+                    </tr>
+                    <tr>
+                        <td>onMouseOver</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อนำ Mouse มาวางไว้เหนือ Object หรือบริเวณที่กำหนด</td>
+                    </tr>
+                    <tr>
+                        <td>onMouseUp</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อปล่อยมืออกจากปุ่มกดของ Mouse
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onMove</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการย้ายหน้าต่างของ Browser</td>
+                    </tr>
+                    <tr>
+                        <td>onReset</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการกดปุ่ม Reset ของ Form</td>
+                    </tr>
+                    <tr>
+                        <td>onResize</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการเปลี่ยนแปลงขนาดของ   Browser</td>
+                    </tr>
+                    <tr>
+                        <td>onSelect</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการเลือกข้อมูลของ Input</td>
+                    </tr>
+                    <tr>
+                        <td>onSubmit</td>
+                        <td>เหตุการณ์ที่เกิดขึ้นเมื่อมีการกดที่ปุ่ม Submit ของ Form หรือ Form เกิดการ Submit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>JS Form | 01 - Form Index</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../js.png" />
+    </head>
+    <body>
+        <h1>02 - Form Index</h1>
+        <div style="border: 1px black solid; width: 200px">
+            <form>
+                <label for="">Form 1</label>
+                <input type="radio" name="age" value="10">10
+                <input type="radio" name="age" value="20">20
+            </form>
+        </div>
+        
+        <div style="border: 1px black solid; width: 200px">
+            <form>
+                <label for="">Form 2</label>
+                <input type="radio" name="age" value="30">30
+                <input type="radio" name="age" value="40">40
+            </form>
+        </div>
+    
+        <br>
+        <button onclick="getValueForm1()">get value form 1</button>
+        <button onclick="getValueForm2()">get value form 2</button>
+        <button onclick="getValueForm3()">get all value form 1</button>
+        <button onclick="getValueForm4()">get all value form 2</button>
+
+        <script>
+
+            function getValueForm1() {
+                let form=document.forms[0]
+                let ageElem=form.elements.age
+
+                console.log('Form 1 มีค่า ' + ageElem.value)
+            }
+
+            function getValueForm2() {
+                let form=document.forms[1]
+                let ageElem=form.elements.age
+
+                console.log('Form 2 มีค่า ' + ageElem.value)
+            }
+
+            function getValueForm3() {
+                let form=document.forms[0]
+                let ageElem=form.elements.age
+
+                for (var index in ageElem){
+                    console.log('(All) Form 1 มีค่า ' + ageElem[index].value)
+                }
+            }
+            function getValueForm4() {
+                let form=document.forms[1]
+                let ageElem=form.elements.age
+
+                for (var index in ageElem){
+                    console.log('(All) Form 2 มีค่า ' + ageElem[index].value)
+                }
+            }
+            
+        </script>
+        
+        <div for="Menu control">
+            <marquee behavior="scroll" direction="down" scrollamount="5">
+                <h2>
+                    <font color="red">
+                        อย่าลืม!! เปิด Console กด
+                        <span>
+                            <font color="green" size="30px">F12</font>
+                        </span>
+                        นะคะ เด็กๆ
+                    </font>
+                </h2>
+            </marquee>
+            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="console.clear();">Clear console log</button>
+            <button onclick="window.location.reload()">Refresh</button>
+        </div>
+    </body>
+</html>
