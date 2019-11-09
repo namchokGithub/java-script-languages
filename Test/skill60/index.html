@@ -230,6 +230,35 @@
             </div>
         </div>
 
+        <div>
+            <button class="accordion w3-orange"><h2>Select value</h2></button>
+            <div class="panel w3-pale-yellow">
+            <div class="w3-margin">
+                
+                <div id="select_val">
+                    <select class="w3-select" name="prefix" id="prefix" style="width: 150px">
+                        <option value="" disabled selected>--- เลือก ---</option>
+                        <option value="นาย">นาย</option>
+                        <option value="นางสาว">นางสาว</option>
+                        <option value="เด็กชาย">เด็กชาย</option>
+                        <option value="เด็กหญิง">เด็กหญิง</option>
+                    </select>
+                    <div class="w3-section">
+                        <label for="">ชื่อ : </label>
+                        <input id="select_name" class="w3-input w3-border w3-section" type="text" name="select_name" placeholder="ชื่อ"> 
+                    </div>
+                    <div class="w3-section">
+                        <label for=""> นามสกุล : </label>
+                        <input id="select_lname" class="w3-input w3-border w3-section" type="text" name="select_lname" placeholder="นามสกุล"> 
+                    </div>
+                    <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" onclick="select_add()">แสดง</button>
+                </div>
+
+                <h3><p>ชื่อของคุณ คือ <span id="select_text">Text</span></p></h3>
+            </div>
+            </div>
+        </div>
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -445,6 +474,21 @@
             sum_checklist = +num1 + +num2 + +num3
             $('#all_val').html(sum_checklist);
         });
+
+        /**
+         * ข้อที่ 11
+         */
+        function select_add(){
+            var prefix = $('#prefix').val();
+            var name = $('#select_name').val();
+            var lname = $('#select_lname').val();
+
+            if(prefix==null){
+                alert('เลือกเพศ')
+            }
+
+            $('#select_text').html(prefix+name+' '+lname)
+        }
 
         function Add_row(){
             var length = document.getElementById("table_dy").rows.length;
