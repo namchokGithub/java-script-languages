@@ -95,9 +95,15 @@
         </div>
 
         <div>
-            <button class="accordion w3-light-blue">Section 3</button>
+            <button class="accordion w3-light-blue"><h2>Array pop</h2></button>
             <div class="panel">
-                <h1>test3</h1>
+                <h3>ผลไม้ทั้งหมด : <span id="fruit"></span></h3>
+                <div class="w3-section">
+                    <label>ชื่อผลไม้</label>
+                    <input class="w3-input w3-border w3-animate-input" type="text" name="input_fruit" id="input_fruit">
+                </div>
+                <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" id="btn_push">Push ผลไม้</button>
+                <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" id="btn_pop">Pop ผลไม้</button>
             </div>
         </div>
 
@@ -132,6 +138,7 @@
         let price2 = 6
         $('#cal-var').on('click', function () {
            $('#ans-var').html(price1 + price2)
+           console.log('6+5 มีค่าเท่ากับ ' + (price1 + price2));
         });
 
         /**
@@ -145,7 +152,30 @@
                 age : $('#age').val(),
                 eyeColor : $('#eyeColor').val()
             }
-            $('#person').html('Name : ' + person.firstName + ' ' + person.lastName + ' Age : ' + person.age + ' Eye colour : ' + person.eyeColor);
+            $('#person').html('Name : ' + person.firstName + ' ' + person.lastName + '<br> Age : ' + person.age + '<br> Eye colour : ' + person.eyeColor);
+            console.log('Name : ' + person.firstName + ' ' + person.lastName + ' Age : ' + person.age + ' Eye colour : ' + person.eyeColor);
+        });
+
+        /**
+         * ข้อที่ 3
+         */
+        let fruits = ['Banana', 'Orange', 'Apple', 'Mango']
+        console.log('มีผลไม้ดังนี้: ' + fruits.toString());
+        $('#fruit').html(fruits.toString());
+        
+        $('#btn_pop').on('click', function () {
+            fruits.pop();
+            $('#fruit').html(fruits.toString());
+            console.log('มีผลไม้ดังนี้: ' + fruits.toString());
+        });
+        $('#btn_push').click(function (e) { 
+            if($("#input_fruit").val()){
+                fruits.push($('#input_fruit').val())
+            }else{
+                alert('โปรดใส่ชื่อผลไม้')
+            }
+            $('#fruit').html(fruits.toString());
+            console.log('มีผลไม้ดังนี้: ' + fruits.toString());
         });
 
         $(document).ready(function () {
