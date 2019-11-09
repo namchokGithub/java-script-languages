@@ -158,10 +158,16 @@
             <button class="accordion w3-lime"><h2>Calculate</h2></button>
             <div class="panel">
                 <div class="w3-section">
-                    <input class="w3-input w3-border w3-section" type="text" name="firstName" id="firstName">
-                    <input class="w3-input w3-border" type="text" name="firstName" id="firstName">
+                    <input class="w3-input w3-border w3-section" type="number" name="num1" id="num1" placeholder="ตัวเลข">
+                    <input class="w3-input w3-border w3-section" type="number" name="num2" id="num2" placeholder="ตัวเลข">
+                    <input class="w3-input w3-border" type="number" name="ans_text" id="ans_text" disabled placeholder="คำตอบ">
                 </div>
-                <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="remove_class">ลบ Class</button>
+                <div>
+                <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="add">บวก</button>
+                <button class="w3-btn w3-round-xxlarge w3-pink w3-hover-shadow" id="minus">ลบ</button>
+                <button class="w3-btn w3-round-xxlarge w3-purple w3-hover-shadow" id="multiple">คูณ</button>
+                <button class="w3-btn w3-round-xxlarge w3-blue w3-hover-shadow" id="divide">หาร</button>
+                </div>
             </div>
         </div>
 
@@ -290,6 +296,33 @@
         /**
          * ข้อที่ 7
          */
+        let num1
+        let num2
+        let sum=0
+        $('#add').click(function (e) { 
+            num1 = $('#num1').val();
+            num2 = $('#num2').val();
+            sum = (+num1 + +num2)
+            $('#ans_text').val(sum);
+        });
+        $('#minus').click(function (e) { 
+            num1 = $('#num1').val();
+            num2 = $('#num2').val();
+            sum = (+num1 - +num2)
+            $('#ans_text').val(sum);
+        });
+        $('#multiple').click(function (e) { 
+            num1 = $('#num1').val();
+            num2 = $('#num2').val();
+            sum = (+num1 * +num2)
+            $('#ans_text').val(sum);
+        });
+        $('#divide').click(function (e) { 
+            num1 = $('#num1').val();
+            num2 = $('#num2').val();
+            sum = (+num1 / +num2)
+            $('#ans_text').val(sum);
+        });
 
         $(document).ready(function () {
         });
