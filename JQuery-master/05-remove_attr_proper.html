@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery | Remove attr proper</title>
+    <link rel="shortcut icon" type="image/x-icon" href="jquery.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            console.log("ลบขอบด้วยคำสั่ง : $('#id').removeAttr('border')");
+            $('#id').removeAttr('border')
+        })
+
+        function removeBorder(){
+            console.log("ลบขอบด้วยคำสั่ง : $('table').removeAttr('border')");
+            $('table').removeAttr('border')
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>05 - Remove attr proper</h1>
+    <table border='2' id="id">
+        <tr>
+            <td>this is first table</td>
+        </tr>
+    </table>
+
+    <table border='3'>
+            <tr>
+                <td>this is second table</td>
+            </tr>
+    </table>
+
+    <table border='4'>
+            <tr>
+                <td>this is third table</td>
+            </tr>
+    </table>
+
+    <br><button onclick="removeBorder()">ลบขอบตารางด้วย removeAttr('border')</button>
+
+    <div for="Menu control">
+        <marquee behavior="scroll" direction="down" scrollamount="5">
+        <h2>
+            <font color="red">
+                อย่าลืม!! เปิด Console กด
+                <span>
+                    <font color="green" size="30px">F12</font>
+                </span>
+                นะคะ เด็กๆ
+            </font>
+        </h2>
+    </marquee>
+    <button onclick="location.href='index.html'">Back</button>
+    <button onclick="console.clear();">Clear console log</button>
+    <button onclick="window.location.reload()">Refresh</button>
+    </div>
+</body>
+
+</html>

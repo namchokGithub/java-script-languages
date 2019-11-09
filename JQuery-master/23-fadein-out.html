@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <title>JQuery | Fade in Fade out</title>
+        <link href="jquery.ico" rel="shortcut icon" type="image/x-icon"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            $(document).ready(function () {
+                $('#show').click(function () {
+                    $(".mydiv").fadeIn('slow')
+                })
+                $('#hide').click(function () {
+                    $('.mydiv').fadeOut('fast')
+                })
+            })
+        </script>
+
+        <style>
+            .mydiv{
+                margin: 10px;
+                padding: 12px;
+                border: 2px solid #666;
+                width: 60px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>23 - Fade in Fade out</h1>
+        <div class="mydiv">this is a square</div>
+        <input id="hide" type="button" value="hide">
+        <input id="show" type="button" value="show">
+
+        <div for="Menu control">
+            <marquee behavior="scroll" direction="down" scrollamount="5">
+                <h2>
+                    <font color="red">
+                        อย่าลืม!! เปิด Console กด
+                        <span>
+                            <font color="green" size="30px">F12</font>
+                        </span>
+                        นะคะ เด็กๆ
+                    </font>
+                </h2>
+            </marquee>
+            <button onclick="location.href='index.html'">Back</button>
+            <button onclick="console.clear();">Clear console log</button>
+            <button onclick="window.location.reload()">Refresh</button>
+        </div>
+    </body>
+
+</html>

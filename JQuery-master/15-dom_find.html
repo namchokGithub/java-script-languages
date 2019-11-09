@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery | DOM find</title>
+    <link href="jquery.ico" rel="shortcut icon" type="image/x-icon"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $('p').find('span').addClass('selected')
+            $('p').eq(0).find('span').addClass('selectedEQ')
+            console.log("ใช้คำสั่ง $('p').find('span').addClass('selected')");
+            console.log("ใช้คำสั่ง $('p').eq(0).find('span').addClass('selectedEQ')");
+        })
+
+        function changeColorByFind(){
+            console.log("ใช้คำสั่ง $('p').find('span').addClass('BlueViolet')");
+            $('p').find('span').addClass('BlueViolet')
+        }
+        function changeColorByEq(){
+            console.log("ใช้คำสั่ง $('p').eq(0).find('span').addClass('Brown')");
+            $('p').eq(0).find('span').addClass('Brown')
+        }
+        function removeClass(){
+            $('span').removeClass('Brown BlueViolet selectedEQ selected')
+            console.log("ใช้คำสั่ง $('span').removeClass('Brown BlueViolet selectedEQ selected')");
+        }
+    </script>
+
+    <style>
+        .selected{
+            color: red;
+        }
+        .selectedEQ{
+            color: blue;
+        }
+        .BlueViolet {
+            color: BlueViolet ;
+        }
+        .Brown {
+            color: Brown ;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>15 - DOM find</h1>
+    <p>This is first paragraph and
+        <span>This is Blue</span>
+    </p>
+
+    <p>This is second paragraph and
+        <span>This is red</span>
+    </p>
+    <button onclick="changeColorByFind()">เปลี่ยนสีโดยค้นหาด้วย Find</button>
+    <button onclick="changeColorByEq()">เปลี่ยนสีทีโดยค้นหาด้วย Eq</button>
+    <button onclick="removeClass()">ลบ Class ทั้งหมด</button>
+    <button onclick="window.location.reload()">โหลดหน้าใหม่</button>
+    
+    <div for="Menu control">
+        <marquee behavior="scroll" direction="down" scrollamount="5">
+            <h2>
+                <font color="red">
+                    อย่าลืม!! เปิด Console กด
+                    <span>
+                        <font color="green" size="30px">F12</font>
+                    </span>
+                    นะคะ เด็กๆ
+                </font>
+            </h2>
+        </marquee>
+        <button onclick="location.href='index.html'">Back</button>
+        <button onclick="console.clear();">Clear console log</button>
+        <button onclick="window.location.reload()">Refresh</button>
+    </div>
+</body>
+
+</html>

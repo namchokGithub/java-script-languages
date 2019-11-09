@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery | Remove class</title>
+    <link rel="shortcut icon" type="image/x-icon" href="jquery.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $('p#p1').removeClass('red')
+            $('p#p2').removeClass('green')
+        })
+
+        function func(){
+            $('p#p3').removeClass('Gold')
+            console.log("ลบ Class ด้วยคำสั่ง $('p#p3').removeClass('Gold')");
+        }
+    </script>
+
+    <style>
+        .red{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+        .Gold{
+            color: Gold;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <h1>07 - Remove class</h1>
+    <div>
+        <p class="red" id="p1">This is first paragraph.</p>
+        <p class="green" id="p2">This is second division paragraph.</p>
+        <p class="Gold" id="p3">This is third division paragraph.</p>
+        <button onclick="func()">ลบ Class Gold  </button>
+    </div>
+    <div for="Menu control">
+        <marquee behavior="scroll" direction="down" scrollamount="5">
+            <h2>
+                <font color="red">
+                    อย่าลืม!! เปิด Console กด
+                    <span>
+                        <font color="green" size="30px">F12</font>
+                    </span>
+                    นะคะ เด็กๆ
+                </font>
+            </h2>
+        </marquee>
+        <button onclick="location.href='index.html'">Back</button>
+        <button onclick="console.clear();">Clear console log</button>
+        <button onclick="window.location.reload()">Refresh</button>
+    </div>
+</body>
+
+</html>

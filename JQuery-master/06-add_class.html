@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery | Add class</title>
+    <link rel="shortcut icon" type="image/x-icon" href="jquery.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $('em').addClass('selected')
+            $('#myid').addClass('highlight')
+        })
+
+        function changeFontColor(){
+            $('#myid').addClass('selected-blue')
+            console.log("เปลี่ยนสีตัวอักษรด้วยคำสั่ง $('#myid').addClass('selected-blue')");
+        }
+    </script>
+
+    <style>
+        .selected{
+            color: red;
+        }
+        .highlight{
+            background: yellow;
+        }
+        .selected-blue{
+            color: DarkViolet  ;
+        }
+        .highlight-blue{
+            background: DeepSkyBlue ;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>06 - Add class</h1>
+    <div>
+        <em title="Bold and Brave">This is first paragraph.</em>
+        <p id="myid">This is second division paragraph.</p>
+        <br>
+        <button onclick="$('em').addClass('highlight-blue')">เปลี่ยนสีพื้นหลัง Paragraph ที่ 1</button>
+        <button onclick="changeFontColor()">เปลี่ยนสีตัวอักษร Paragraph ที่ 2</button>
+    </div>
+
+    <div for="Menu control">
+        <marquee behavior="scroll" direction="down" scrollamount="5">
+        <h2>
+            <font color="red">
+                อย่าลืม!! เปิด Console กด
+                <span>
+                    <font color="green" size="30px">F12</font>
+                </span>
+                นะคะ เด็กๆ
+            </font>
+        </h2>
+        </marquee>
+        <button onclick="location.href='index.html'">Back</button>
+        <button onclick="console.clear();">Clear console log</button>
+        <button onclick="window.location.reload()">Refresh</button>
+    </div>
+</body>
+
+</html>

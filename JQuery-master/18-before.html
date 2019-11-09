@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery | Before</title>
+    <link href="jquery.ico" rel="shortcut icon" type="image/x-icon"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" languge="javascript">
+        $(document).ready(function (){ 
+           $("div").click(function (){  
+                $(this).before("<div id='division'></div>")
+                console.log(" $(div).before('<div id='division'></div>') เพื่อเพิ่ม Div ก่อน Div ที่เลือก");
+           })
+        })
+    </script>
+
+    <style>
+        #division{
+            margin: 10px;
+            padding: 12px;
+            border: 2px solid #666;
+            width: 60px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>18 - Before</h1>
+    <p>click on any square below:</p>
+    <span id="result"></span>
+
+    <div id="division" style="background-color:blue;">
+    </div>
+    <div id="division" style="background-color:green;">
+    </div>
+    <div id="division" style="background-color:red;">
+    </div>
+
+    <div for="Menu control">
+        <marquee behavior="scroll" direction="down" scrollamount="5">
+            <h2>
+                <font color="red">
+                    อย่าลืม!! เปิด Console กด
+                    <span>
+                        <font color="green" size="30px">F12</font>
+                    </span>
+                    นะคะ เด็กๆ
+                </font>
+            </h2>
+        </marquee>
+        <button onclick="location.href='index.html'">Back</button>
+        <button onclick="console.clear();">Clear console log</button>
+        <button onclick="window.location.reload()">Refresh</button>
+    </div>
+</body>
+
+</html>

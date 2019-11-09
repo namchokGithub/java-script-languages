@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery | The Selector</title>
+    <link rel="shortcut icon" type="image/x-icon" href="jquery.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <h1>02 - The Selector</h1>
+    <p>ทำการเปลี่ยนสีด้วย Selector ต่าง ๆ</p>
+    <div class="big" id="div1">
+        <p>This is first division of the DOM.</p>
+    </div>
+
+    <div class="medium" id="div2">
+        <p>This is second division of the DOM.</p>
+    </div>
+
+    <div class="small" id="div3">
+        <span>This is third division of the DOM.</span>
+    </div>
+    <br>
+    <button onclick="withTagName()">ใช้ selector ที่เป็น Tag name</button>
+    <button onclick="withId()">ใช้ selector ที่เป็น ID</button>
+    <button onclick="withClass()">ใช้ selector ที่เป็น Class</button>
+    <button onclick="withAlls()">ใช้ *</button>
+    <button onclick="withTagName2()">ใช้ selector ที่เป็น Tag name แบบ 2 ชั้น</button>
+    <button onclick="withAlls2()">ใช้แบบผสม</button>
+    <button onclick="window.location.reload()">โหลดหน้าใหม่</button>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+           //$('div').css('background-color', 'yellow')
+           //$('#div1').css('background-color', 'yellow')
+           //$('#div1, #div2').css('background-color', 'yellow')
+           //$('.small').css('background-color', 'yellow')
+           //$('*').css('background-color', 'yellow')
+           //$('div p').css('background-color', 'yellow')
+           //$('div.small span').css('color', 'red')
+        })
+        function withTagName(){
+            $('div').css('background-color', 'red')
+            console.log('ใช้คำสั่ง : $(\'div\').css(\'background-color\', \'red\')');
+        }
+        function withTagName2(){
+            $('div p').css('background-color', 'yellow')
+            console.log('ใช้คำสั่ง : $(\'div p\').css(\'background-color\', \'yellow\')');
+        }
+        function withId(){
+            $('#div1').css('background-color', 'red')
+            console.log('ใช้คำสั่ง : $(\'#div1\').css(\'background-color\', \'red\')');
+        }
+        function withClass(){
+            $('.small').css('background-color', 'green')
+            console.log('ใช้คำสั่ง : $(\'.small\').css(\'background-color\', \'green\')');
+        }
+        function withAlls(){
+            $('*').css('background-color', 'blue')
+            console.log('ใช้คำสั่ง : $(\'.small\').css(\'background-color\', \'blue\')');
+        }
+        function withAlls2(){
+            $('div.small span').css('color', 'DarkOrange')
+            console.log('ใช้คำสั่ง : $(\'div.small span\').css(\'background-color\', \'DarkOrange\')');
+        }
+    </script>
+
+    <div for="Menu control">
+        <marquee behavior="scroll" direction="down" scrollamount="5">
+            <h2>
+                <font color="red">
+                    อย่าลืม!! เปิด Console กด
+                    <span>
+                        <font color="green" size="30px">F12</font>
+                    </span>
+                    นะคะ เด็กๆ
+                </font>
+            </h2>
+        </marquee>
+        <button onclick="location.href='index.html'">Back</button>
+        <button onclick="console.clear();">Clear console log</button>
+        <button onclick="window.location.reload()">Refresh</button>
+    </div>
+</body>
+    
+</html>
