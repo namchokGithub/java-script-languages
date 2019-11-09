@@ -259,6 +259,59 @@
             </div>
         </div>
 
+        <div>
+            <button class="accordion w3-deep-orange"><h2>Event</h2></button>
+            <div class="panel w3-amber">
+                <div class="w3-row">
+                    <div class="w3-col l4 w3-yellow w3-padding">
+                        <label>ชื่อ :</label>
+                        <input class="w3-input w3-border w3-section" type="text" name="event_text" id="event_text">
+                    </div>
+                    <div class="w3-col l8 w3-center">
+                        <table class="w3-table w3-border w3-sand" border="1px">
+                            <thead class="w3-khaki">
+                                <tr><td class="w3-center" style="width: 300px">Name</td><td class="w3-center">Event</td></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>on click</td>
+                                    <td id="click_text"></td>
+                                </tr>
+                                <tr>
+                                    <td>on dblclick</td>
+                                    <td id="dblclick_text"></td>
+                                </tr>
+                                <tr>
+                                    <td>on keydown</td>
+                                    <td id="keydown_text"></td>
+                                </tr>
+                                <tr>
+                                    <td>on keypress</td>
+                                    <td id="keypress_text"></td>
+                                </tr>
+                                <tr>
+                                    <td>on mousedown</td>
+                                    <td id="mousedown_text"></td>
+                                </tr>
+                                <tr>
+                                    <td>on mouseover</td>
+                                    <td id="mouseover_text"></td>
+                                </tr>
+                                <tr>
+                                    <td>on mouseout</td>
+                                    <td id="mouseout_text"></td>
+                                </tr>
+                                <tr>
+                                    <td>on mouseup</td>
+                                    <td id="mouseup_text"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -485,10 +538,19 @@
 
             if(prefix==null){
                 alert('เลือกเพศ')
+            }else if(name==''){
+                alert('ใส่ชื่อ')
+            }else if(lname==''){
+                alert('ใส่นามสกุล')
+            }else{
+                $('#select_text').html(prefix+name+' '+lname)
             }
-
-            $('#select_text').html(prefix+name+' '+lname)
         }
+
+        /**
+         * ข้อที่ 12
+         */
+
 
         function Add_row(){
             var length = document.getElementById("table_dy").rows.length;
