@@ -62,6 +62,7 @@
             <p class="nav w3-jumbo">JavaScript</p>
         </div>
 
+        <!-- Variables -->
         <div>
             <button class="accordion w3-indigo"><h2>Variables</h2></button>
             <div class="panel">
@@ -71,6 +72,7 @@
             </div>
         </div>
 
+        <!-- Array Object -->
         <div>
             <button class="accordion w3-blue"><h2>Array Object</h2></button>
             <div class="panel w3-padding-large">
@@ -101,6 +103,7 @@
             </div>
         </div>
 
+        <!-- Array pop -->
         <div>
             <button class="accordion w3-light-blue"><h2>Array pop</h2></button>
             <div class="panel">
@@ -114,16 +117,18 @@
             </div>
         </div>
 
+        <!-- *** JavaScript and JQuery -->
         <div>
-            <button class="accordion w3-cyan"><h2>JavaScript and JQuery</h2></button>
+            <button class="accordion w3-cyan"><h2>*** JavaScript and JQuery</h2></button>
             <div class="panel">
                 <div class="w3-margin"><h1 id="chg_text">Text</h1></div>
                 <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="btn_js">แสดงด้วย JavaScript</button>
-                <button class="w3-btn w3-round-xxlarge w3-pink w3-hover-shadow" id="btn_jq">แสดงด้วย JQuert</button>
+                <button class="w3-btn w3-round-xxlarge w3-pink w3-hover-shadow" id="btn_jq">แสดงด้วย JQuery</button>
                 <button class="w3-btn w3-round-xxlarge w3-pale-blue w3-hover-shadow" id="btn_textChg">แสดง Text</button>
             </div>
         </div>
         
+        <!-- Change Images -->
         <div>
             <button class="accordion w3-teal"><h2>Change Images</h2></button>
             <div class="panel">
@@ -136,6 +141,7 @@
             </div>
         </div>
 
+        <!-- Hide show -->
         <div>
             <button class="accordion w3-green"><h2>Hide show</h2></button>
             <div class="panel">
@@ -145,6 +151,7 @@
             </div>
         </div>
 
+        <!-- Add class -->
         <div>
             <button class="accordion w3-light-green"><h2>Add class</h2></button>
             <div class="panel">
@@ -154,8 +161,9 @@
             </div>
         </div>
 
+        <!-- *** Calculate -->
         <div>
-            <button class="accordion w3-lime"><h2>Calculate</h2></button>
+            <button class="accordion w3-lime"><h2>*** Calculate</h2></button>
             <div class="panel">
                 <h3 id="text-cal">Text</h3>
                 <div class="w3-section">
@@ -168,10 +176,13 @@
                 <button class="w3-btn w3-round-xxlarge w3-pink w3-hover-shadow" id="minus">ลบ</button>
                 <button class="w3-btn w3-round-xxlarge w3-purple w3-hover-shadow" id="multiple">คูณ</button>
                 <button class="w3-btn w3-round-xxlarge w3-blue w3-hover-shadow" id="divide">หาร</button>
+                <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" id="power1"> num1 ยกกำลัง num2  </button>
+                <button class="w3-btn w3-round-xxlarge w3-teal w3-hover-shadow" id="power2">num2 ยกกำลัง num1 </button>
                 </div>
             </div>
         </div>
 
+        <!-- Star -->
         <div>
             <button class="accordion w3-light-green"><h2>Star</h2></button>
             <div class="panel">
@@ -181,8 +192,9 @@
             </div>
         </div>
 
+        <!-- **** Table row -->
         <div>
-            <button class="accordion w3-khaki"><h2>Table row</h2></button>
+            <button class="accordion w3-khaki"><h2>*** Table row</h2></button>
             <div class="panel w3-sand">
                 <div class="w3-container w3-margin">
                     <div class="w3-section">
@@ -211,6 +223,7 @@
             </div>
         </div>
 
+        <!-- Check list -->
         <div>
             <button class="accordion w3-amber"><h2>Check list</h2></button>
             <div class="panel w3-pale-yellow">
@@ -230,8 +243,9 @@
             </div>
         </div>
 
+        <!-- *** Select value -->
         <div>
-            <button class="accordion w3-orange"><h2>Select value</h2></button>
+            <button class="accordion w3-orange"><h2>*** Select value</h2></button>
             <div class="panel w3-pale-yellow">
             <div class="w3-margin">
                 
@@ -259,6 +273,7 @@
             </div>
         </div>
 
+        <!-- Event -->
         <div>
             <button class="accordion w3-deep-orange"><h2>Event</h2></button>
             <div class="panel w3-amber">
@@ -316,6 +331,7 @@
             </div>
         </div>
 
+        <!-- Radio -->
         <div>
             <button class="accordion w3-red"><h2>Radio</h2></button>
             <div class="panel w3-pale-red">
@@ -341,7 +357,7 @@
                     <label>หาร</label>
                 </div>
 
-                <h2><p>มีค่าเท่ากับ <span id="radio_text">99999</span></p></h2>
+                <h2><p>มีค่าเท่ากับ <span id="radio_text"></span></p></h2>
             </div>
             </div>
         </div>
@@ -510,7 +526,27 @@
             $('#ans_text').val(sum);
             $('#text-cal').html("หารสำเร็จ");
             setTimeout(() => {
-                $('#text-tar').html("Text");
+                $('#text-cal').html("Text");
+            }, 1000);
+        });
+        $('#power1').click(function (e) { 
+            num1 = $('#num1').val();
+            num2 = $('#num2').val();
+            sum = Math.pow(+num1,+num2)
+            $('#ans_text').val(sum);
+            $('#text-cal').html("ยกกำลังสำเร็จ");
+            setTimeout(() => {
+                $('#text-cal').html("Text");
+            }, 1000);
+        });
+        $('#power2').click(function (e) { 
+            num1 = $('#num1').val();
+            num2 = $('#num2').val();
+            sum = Math.pow(+num2,+num1)
+            $('#ans_text').val(sum);
+            $('#text-cal').html("ยกกำลังสำเร็จ");
+            setTimeout(() => {
+                $('#text-cal').html("Text");
             }, 1000);
         });
 
@@ -669,6 +705,7 @@
             
             $('#radio_text').html(sum);
         });
+
         $(document).ready(function () {
 
         });
@@ -721,8 +758,4 @@
         }
     }
     
-    function Delete_row_2(btn){
-        let row = btn.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-    }
 </script>
