@@ -120,7 +120,21 @@
         <div>
             <button class="accordion w3-teal"><h2>Change Images</h2></button>
             <div class="panel">
-                
+                <div>
+                    <img id="pic" src="before.jpg" style="width:50px; height:50px">
+                </div>
+                <div>
+                    <button class="w3-btn w3-round-xxlarge w3-yellow w3-hover-shadow" id="btn_pic">เปลี่ยนรูป</button>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button class="accordion w3-green"><h2>Hide show</h2></button>
+            <div class="panel">
+                <p id="text_name">Namchok Singhachai</p>
+                <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="show_name">แสดง</button>
+                <button class="w3-btn w3-round-xxlarge w3-yellow w3-hover-shadow" id="hide_name">ซ่อน</button>
             </div>
         </div>
 
@@ -212,6 +226,31 @@
             $('#chg_text').html('Text');
             console.log('Text')
         });
+
+        /**
+         * ข้อที่ 5
+         */
+        let checkPic = 0;
+        $('#btn_pic').click(function() {
+            if(checkPic==0){
+                $('#pic').attr('src', 'after.jpg');
+                checkPic = 1
+            }else{
+                $('#pic').attr('src', 'before.jpg');
+                checkPic = 0
+            }
+        })
+
+        /**
+         * ข้อที่ 6
+         */
+        $('#hide_name').click(function (e) { 
+            $('#text_name').hide();
+        });
+        $('#show_name').click(function (e) { 
+            $('#text_name').show();
+        });
+
 
         $(document).ready(function () {
         });
