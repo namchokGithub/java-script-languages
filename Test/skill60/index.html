@@ -48,6 +48,13 @@
             margin-top: 5px !important;
             margin-bottom: 5px !important;
         }
+
+        .text-name{
+            background-color: pink;
+            border: solid black 1px;
+            color: red;
+            font-size: 30px;
+        }
     </style>
 
     <body>
@@ -218,6 +225,7 @@
             $('#fruit').html(fruits.toString());
             console.log('มีผลไม้ดังนี้: ' + fruits.toString());
         });
+
         $('#btn_push').click(function (e) { 
             if($("#input_fruit").val()){
                 fruits.push($('#input_fruit').val())
@@ -270,6 +278,17 @@
             $('#text_name').show();
         });
 
+        $('#add_class').click(function (e) { 
+            $('#add_class_text').addClass('text-name');
+        });
+
+        $('#remove_class').click(function (e) { 
+            $('#add_class_text').removeClass('text-name');
+        });
+
+        /**
+         * ข้อที่ 7
+         */
 
         $(document).ready(function () {
         });
