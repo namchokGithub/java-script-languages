@@ -157,6 +157,7 @@
         <div>
             <button class="accordion w3-lime"><h2>Calculate</h2></button>
             <div class="panel">
+                <h3 id="text-cal">Text</h3>
                 <div class="w3-section">
                     <input class="w3-input w3-border w3-section" type="number" name="num1" id="num1" placeholder="ตัวเลข">
                     <input class="w3-input w3-border w3-section" type="number" name="num2" id="num2" placeholder="ตัวเลข">
@@ -168,6 +169,14 @@
                 <button class="w3-btn w3-round-xxlarge w3-purple w3-hover-shadow" id="multiple">คูณ</button>
                 <button class="w3-btn w3-round-xxlarge w3-blue w3-hover-shadow" id="divide">หาร</button>
                 </div>
+            </div>
+        </div>
+
+        <div>
+            <button class="accordion w3-light-green"><h2>Star</h2></button>
+            <div class="panel">
+                <div id="star"></div>
+                <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="btn_star">รับค่า</button>
             </div>
         </div>
 
@@ -304,27 +313,59 @@
             num2 = $('#num2').val();
             sum = (+num1 + +num2)
             $('#ans_text').val(sum);
+            $('#text-cal').html("บวกสำเร็จ");
+            setTimeout(() => {
+                $('#text-cal').html("Text");
+            }, 1000);
         });
         $('#minus').click(function (e) { 
             num1 = $('#num1').val();
             num2 = $('#num2').val();
             sum = (+num1 - +num2)
             $('#ans_text').val(sum);
+            $('#text-cal').html("ลบสำเร็จ");
+            setTimeout(() => {
+                $('#text-cal').html("Text");
+            }, 1000);
         });
         $('#multiple').click(function (e) { 
             num1 = $('#num1').val();
             num2 = $('#num2').val();
             sum = (+num1 * +num2)
             $('#ans_text').val(sum);
+            $('#text-cal').html("คูณสำเร็จ");
+            setTimeout(() => {
+                $('#text-cal').html("Text");
+            }, 1000);
         });
         $('#divide').click(function (e) { 
             num1 = $('#num1').val();
             num2 = $('#num2').val();
             sum = (+num1 / +num2)
             $('#ans_text').val(sum);
+            $('#text-cal').html("หารสำเร็จ");
+            setTimeout(() => {
+                $('#text-cal').html("Text");
+            }, 1000);
         });
 
+        /**
+         * ข้อที่ 8
+         */
+        $('#btn_star').click(function (e) { 
+            var num = prompt("ใส่ค่า")
+            var star
+            for(let i=0;i<num;i++){
+                for(let j=1; j<=i; j++){
+                    star+='*'
+                    document.write('*');
+                }
+                star+='<br>'
+            }
+            $('#text-cal').html(star);
+        });
         $(document).ready(function () {
+
         });
     </script>
 </html>
