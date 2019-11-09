@@ -9,41 +9,45 @@
     </head>
 
     <style>
-    .accordion {
-        background-color: #eee;
-        color: #444;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-        transition: 0.4s;
-    }
+        .w3-input{
+            width: 300px !important;
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
 
-    .active, .accordion:hover {
-        background-color: #ccc; 
-    }
+        .active, .accordion:hover {
+            background-color: #ccc; 
+        }
 
-    .panel {
-        padding: 0 18px;
-        display: none;
-        background-color: white;
-        overflow: hidden;
-    }
-    
-    .nav{
-        padding: 0px;
-        margin: 0px;
-        text-align: center;
-        font-family: "Comic Sans MS", cursive, sans-serif;
-    }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .nav{
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
 
-    .w3-btn{
-        margin-top: 3px !important;
-        margin-bottom: 5px !important;
-    }
+        .w3-btn{
+            margin-left: 0px !important;
+            margin-top: 5px !important;
+            margin-bottom: 5px !important;
+        }
     </style>
 
     <body>
@@ -52,18 +56,41 @@
         </div>
 
         <div>
-            <button class="accordion w3-indigo"><h2>JavaScript Variables</h2></button>
+            <button class="accordion w3-indigo"><h2>Variables</h2></button>
             <div class="panel">
                 <h4>Variables</h4>
-                <p>1 บวก 2 เท่ากับ = <span id="ans-var"></span></p>
-                <button class="w3-btn w3-round-xxlarge" id="cal-var">คำนวณ</button>
+                <p>5 บวก 6 เท่ากับ <span id="ans-var"></span></p>
+                <button class="w3-btn w3-round-xxlarge w3-purple w3-hover-shadow" id="cal-var">คำนวณ</button>
             </div>
         </div>
 
         <div>
-            <button class="accordion w3-blue">Section 2</button>
-            <div class="panel">
-                <h1>test2</h1>
+            <button class="accordion w3-blue"><h2>Array Object</h2></button>
+            <div class="panel w3-padding-large">
+                <h3 id="person"></h3>
+                <div class="w3-container">
+                    <div class="w3-section">
+                        <label>First Name</label>
+                        <input class="w3-input w3-border w3-animate-input" type="text" name="firstName" id="firstName">
+                    </div>
+
+                    <div class="w3-section">   
+                        <label>Last Name</label>
+                        <input class="w3-input w3-border w3-animate-input" type="text" name="lastName" id="lastName">
+                    </div>
+
+                    <div class="w3-section">
+                        <label>Age</label>
+                        <input class="w3-input w3-border w3-animate-input" type="number" min="0" name="age" id="age">
+                    </div>
+
+                    <div class="w3-section">
+                        <label>Eye color</label>
+                        <input class="w3-input w3-border w3-animate-input" type="text" name="eyeColor" id="eyeColor">
+                    </div>
+
+                    <button class="w3-btn w3-round-xxlarge w3-indigo w3-hover-shadow" id="btn_person">แสดง</button>
+                </div>
             </div>
         </div>
 
@@ -97,8 +124,31 @@
         }
         //------------------------------------------------------------------------------------//
 
+
+        /**
+         * ข้อที่ 1
+         */
+        let price1 = 5
+        let price2 = 6
+        $('#cal-var').on('click', function () {
+           $('#ans-var').html(price1 + price2)
+        });
+
+        /**
+         * ข้อที่ 2
+         */
+        let person = { firstName, lastName ,age ,eyeColor }
+        $('#btn_person').on('click', function () {
+            person = {
+                firstName : $('#firstName').val(),
+                lastName : $('#lastName').val(),
+                age : $('#age').val(),
+                eyeColor : $('#eyeColor').val()
+            }
+            $('#person').html('Name : ' + person.firstName + ' ' + person.lastName + ' Age : ' + person.age + ' Eye colour : ' + person.eyeColor);
+        });
+
         $(document).ready(function () {
         });
-        
     </script>
 </html>
