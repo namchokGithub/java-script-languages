@@ -217,11 +217,11 @@
             <div class="w3-margin">
                 
                 <div id="check_list">
-                    <input id="check_1" class="w3-radio" type="checkbox" name="number" value="1"> 
+                    <input id="check_1" class="w3-check" type="checkbox" name="number" value="1"> 
                     <label>1</label>
-                    <input id="check_2" class="w3-radio" type="checkbox" name="number" value="2">
+                    <input id="check_2" class="w3-check" type="checkbox" name="number" value="2">
                     <label>2</label>
-                    <input id="check_3" class="w3-radio" type="checkbox" name="number" value="3"> 
+                    <input id="check_3" class="w3-check " type="checkbox" name="number" value="3"> 
                     <label>3</label>
                 </div>
 
@@ -316,6 +316,35 @@
             </div>
         </div>
 
+        <div>
+            <button class="accordion w3-red"><h2>Radio</h2></button>
+            <div class="panel w3-pale-red">
+            <div class="w3-margin">
+                
+                <div id="radio_list">
+                    <div class="w3-row">
+                        <div class="w3-col l2">
+                            <input id="radio_num1" class="w3-input w3-section" type="text" name="radio_num1" placeholder="number-1"> 
+                        </div>
+                        <div class="w3-col l2">
+                            <input id="radio_num2" class="w3-input w3-section" type="text" name="radio_num2" placeholder="number-2"> 
+                        </div>
+                    </div>
+
+                    <input id="radio_plus" class="w3-radio" type="radio" name="cal" value="1"> 
+                    <label>บวก</label>
+                    <input id="radio_minus" class="w3-radio" type="radio" name="cal" value="2">
+                    <label>ลบ</label>
+                    <input id="radio_multi" class="w3-radio" type="radio" name="cal" value="3"> 
+                    <label>คูณ</label>
+                    <input id="radio_divide" class="w3-radio" type="radio" name="cal" value="3"> 
+                    <label>หาร</label>
+                </div>
+
+                <h2><p>มีค่าเท่ากับ <span id="radio_text">0</span></p></h2>
+            </div>
+            </div>
+        </div>
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -555,55 +584,6 @@
          * ข้อที่ 12
          */
 
-
-        function Add_row(){
-            var length = document.getElementById("table_dy").rows.length;
-            var length_cell = document.getElementById("table_dy").rows[0].cells.length;
-            var table = document.getElementById("table_dy");
-            var row = table.insertRow();
-            for(var i=0;i<length_cell;i++){
-                var p = i+1;
-                row.insertCell(i).innerHTML = "R"+length+"-C"+p;
-            }
-        }
-        
-        function Delete_row(){
-            var length = document.getElementById("table_dy").rows.length;
-            if(length!=1){
-            document.getElementById("table_dy").deleteRow(length-1);
-            }
-        }
-        
-        function Add_cell(){
-            var length = document.getElementById("table_dy").rows.length;
-            var length_cell = document.getElementById("table_dy").rows[0].cells.length;
-            var length_cell_plus = length_cell+1;
-
-            for(var i=0;i<length;i++){
-                if(i==0){
-                    document.getElementById("table_dy").rows[i].insertCell(length_cell).innerHTML = "<b>H"+length_cell_plus+"</b>";
-                }else{
-                    document.getElementById("table_dy").rows[i].insertCell(length_cell).innerHTML = "R"+i+"-C"+length_cell_plus;
-                }
-            }
-            
-        }
-        
-        function Delete_cell(){
-            var length = document.getElementById("table_dy").rows.length;
-            var length_cell = document.getElementById("table_dy").rows[0].cells.length;
-            if(length_cell!=1){
-                for(var i=0;i<length;i++){
-                    document.getElementById("table_dy").rows[i].deleteCell(length_cell-1);
-                }
-            }
-        }
-        
-        function Delete_row_2(btn){
-            let row = btn.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-        }
-
         $('#event_text').click(function (e) { 
             $('#click_text').html('onClick')
             setTimeout(() => {
@@ -672,3 +652,55 @@
         });
     </script>
 </html>
+
+
+<!-- Js old -->
+<script>
+    function Add_row(){
+        var length = document.getElementById("table_dy").rows.length;
+        var length_cell = document.getElementById("table_dy").rows[0].cells.length;
+        var table = document.getElementById("table_dy");
+        var row = table.insertRow();
+        for(var i=0;i<length_cell;i++){
+            var p = i+1;
+            row.insertCell(i).innerHTML = "R"+length+"-C"+p;
+        }
+    }
+    
+    function Delete_row(){
+        var length = document.getElementById("table_dy").rows.length;
+        if(length!=1){
+        document.getElementById("table_dy").deleteRow(length-1);
+        }
+    }
+    
+    function Add_cell(){
+        var length = document.getElementById("table_dy").rows.length;
+        var length_cell = document.getElementById("table_dy").rows[0].cells.length;
+        var length_cell_plus = length_cell+1;
+
+        for(var i=0;i<length;i++){
+            if(i==0){
+                document.getElementById("table_dy").rows[i].insertCell(length_cell).innerHTML = "<b>H"+length_cell_plus+"</b>";
+            }else{
+                document.getElementById("table_dy").rows[i].insertCell(length_cell).innerHTML = "R"+i+"-C"+length_cell_plus;
+            }
+        }
+        
+    }
+    
+    function Delete_cell(){
+        var length = document.getElementById("table_dy").rows.length;
+        var length_cell = document.getElementById("table_dy").rows[0].cells.length;
+        if(length_cell!=1){
+            for(var i=0;i<length;i++){
+                document.getElementById("table_dy").rows[i].deleteCell(length_cell-1);
+            }
+        }
+    }
+    
+    function Delete_row_2(btn){
+        let row = btn.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+</script>
