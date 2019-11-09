@@ -32,29 +32,43 @@
         background-color: white;
         overflow: hidden;
     }
+    
+    .nav{
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .w3-btn{
+        margin-top: 3px !important;
+        margin-bottom: 5px !important;
+    }
     </style>
 
     <body>
         <div class="w3-container w3-deep-purple">
-            <h1>JavaScript</h1>
+            <p class="nav w3-jumbo">JavaScript</p>
         </div>
 
         <div>
-            <button class="accordion w3-indigo">JavaScript Variables</button>
+            <button class="accordion w3-indigo"><h2>JavaScript Variables</h2></button>
             <div class="panel">
-                <h2>Variables</h2>
+                <h4>Variables</h4>
+                <p>1 บวก 2 เท่ากับ = <span id="ans-var"></span></p>
+                <button class="w3-btn w3-round-xxlarge" id="cal-var">คำนวณ</button>
             </div>
         </div>
 
         <div>
-            <button class="accordion">Section 2</button>
+            <button class="accordion w3-blue">Section 2</button>
             <div class="panel">
                 <h1>test2</h1>
             </div>
         </div>
 
         <div>
-            <button class="accordion">Section 3</button>
+            <button class="accordion w3-light-blue">Section 3</button>
             <div class="panel">
                 <h1>test3</h1>
             </div>
@@ -64,7 +78,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        // Variable //-------------------------------------------------------------------------//
+        console.log("Hello team 2");
+
+        // Nav bar -------------------------------------------------------------------------//
         var acc = document.getElementsByClassName("accordion");
         var i;
 
@@ -82,7 +98,7 @@
         //------------------------------------------------------------------------------------//
 
         $(document).ready(function () {
-            
         });
+        
     </script>
 </html>
