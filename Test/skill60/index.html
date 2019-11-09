@@ -183,43 +183,29 @@
 
         <div>
             <button class="accordion w3-khaki"><h2>Table row</h2></button>
-            <div class="panel">
-                <div class="w3-container" style="width: 300px !important;">
-                    <table class="w3-table-all w3-margin" >
+            <div class="panel w3-sand">
+                <div class="w3-container w3-margin">
+                    <div class="w3-section">
+                        <input class="w3-input w3-border w3-section w3-animate-input" type="text" name="name_table" id="name_table" placeholder="ชื่อ">
+                        <input class="w3-input w3-border w3-section w3-animate-input" type="text" name="lname_table" id="lname_table" placeholder="นามสกุล">
+                        <input class="w3-input w3-border w3-animate-input" type="number" name="age_text" id="age_text"  placeholder="อายุ">
+                        <div>
+                            <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" onclick="add_data()">เพิ่ม</button>
+                        </div>
+                    </div>
+                    <table class="w3-table w3-striped w3-border w3-khaki" >
                         <thead>
-                            <tr class="w3-light-grey w3-hover-red">
+                            <tr class="w3-brown">
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Points</th>
+                                <th>Operator</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="w3-hover-green">
-                                <td>Jill</td>
-                                <td>Smith</td>
-                                <td>50</td>
-                            </tr>
-                            <tr class="w3-hover-blue">
-                                <td>Eve</td>
-                                <td>Jackson</td>
-                                <td>94</td>
-                            </tr>
-                            <tr class="w3-hover-black">
-                                <td>Adam</td>
-                                <td>Johnson</td>
-                                <td>67</td>
-                            </tr>
-                            <tr class="w3-hover-text-green">
-                                <td>Bo</td>
-                                <td>Nilson</td>
-                                <td>35</td>
-                            </tr>
+                        <tbody id="table_data">
+                            
                         </tbody>
                     </table>
-                    <div class="" style="float: right">
-                        <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" id="add_row">เพิ่มแถว</button>
-                        <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="remove_row">ลดแถว</button>
-                    </div>
                 </div>
 
             </div>
@@ -408,6 +394,70 @@
             }
             $('#star').html(star);
         });
+
+        let index_row=0
+
+        function add_data(){
+            var name = $('#name_table').val();
+            var last_name = $('#lname_table').val();
+            var age = $('#age_text').val();
+            var index = '#delete_' + index_row
+            var data = '<tr><td>'+name+'</td><td>'+last_name+'</td><td>'+age+'</td><td><button class="w3-btn w3-round w3-red w3-hover-shadow" id="delete_'+index_row+'" onclick="remove(\''+index+'\')">ลบ</button></td></tr>'
+            $('#table_data').append(data);
+            ++index_row
+        }
+
+        function remove(id){
+            $(id).parents("tr").remove()
+        }
+
+        function Add_row(){
+            var length = document.getElementById("table_dy").rows.length;
+            var length_cell = document.getElementById("table_dy").rows[0].cells.length;
+            var table = document.getElementById("table_dy");
+            var row = table.insertRow();
+            for(var i=0;i<length_cell;i++){
+                var p = i+1;
+                row.insertCell(i).innerHTML = "R"+length+"-C"+p;
+            }
+        }
+        
+        function Delete_row(){
+            var length = document.getElementById("table_dy").rows.length;
+            if(length!=1){
+            document.getElementById("table_dy").deleteRow(length-1);
+            }
+        }
+        
+        function Add_cell(){
+            var length = document.getElementById("table_dy").rows.length;
+            var length_cell = document.getElementById("table_dy").rows[0].cells.length;
+            var length_cell_plus = length_cell+1;
+
+            for(var i=0;i<length;i++){
+                if(i==0){
+                    document.getElementById("table_dy").rows[i].insertCell(length_cell).innerHTML = "<b>H"+length_cell_plus+"</b>";
+                }else{
+                    document.getElementById("table_dy").rows[i].insertCell(length_cell).innerHTML = "R"+i+"-C"+length_cell_plus;
+                }
+            }
+            
+        }
+        
+        function Delete_cell(){
+            var length = document.getElementById("table_dy").rows.length;
+            var length_cell = document.getElementById("table_dy").rows[0].cells.length;
+            if(length_cell!=1){
+                for(var i=0;i<length;i++){
+                    document.getElementById("table_dy").rows[i].deleteCell(length_cell-1);
+                }
+            }
+        }
+        
+        function Delete_row_2(btn){
+            let row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
 
         $(document).ready(function () {
 
