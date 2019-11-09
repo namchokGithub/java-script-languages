@@ -211,6 +211,25 @@
             </div>
         </div>
 
+        <div>
+            <button class="accordion w3-amber"><h2>Check list</h2></button>
+            <div class="panel w3-pale-yellow">
+            <div class="w3-margin">
+                
+                <div id="check_list">
+                    <input id="check_1" class="w3-radio" type="checkbox" name="number" value="1"> 
+                    <label>1</label>
+                    <input id="check_2" class="w3-radio" type="checkbox" name="number" value="2">
+                    <label>2</label>
+                    <input id="check_3" class="w3-radio" type="checkbox" name="number" value="3"> 
+                    <label>3</label>
+                </div>
+
+                <p>มีค่าเท่ากับ <span id="all_val">0</span></p>
+            </div>
+            </div>
+        </div>
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -395,6 +414,10 @@
             $('#star').html(star);
         });
 
+
+        /**
+         * ข้อที่ 9
+         */
         let index_row=0
 
         function add_data(){
@@ -410,6 +433,18 @@
         function remove(id){
             $(id).parents("tr").remove()
         }
+
+
+        /**
+         * ข้อที่ 10
+         */
+        $('#check_list').change(function (e) { 
+            $('#check_1').prop('checked')==true ? num1 = $('#check_1').val() : num1 = 0
+            $('#check_2').prop('checked')==true ? num2 = $('#check_2').val() : num2 = 0
+            $('#check_3').prop('checked')==true ? num3 = $('#check_3').val() : num3 = 0
+            sum_checklist = +num1 + +num2 + +num3
+            $('#all_val').html(sum_checklist);
+        });
 
         function Add_row(){
             var length = document.getElementById("table_dy").rows.length;
