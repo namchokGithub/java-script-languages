@@ -175,8 +175,53 @@
         <div>
             <button class="accordion w3-light-green"><h2>Star</h2></button>
             <div class="panel">
+                <h3 class="w3-section"> Print star</h3>
                 <div id="star"></div>
                 <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="btn_star">รับค่า</button>
+            </div>
+        </div>
+
+        <div>
+            <button class="accordion w3-khaki"><h2>Table row</h2></button>
+            <div class="panel">
+                <div class="w3-container" style="width: 300px !important;">
+                    <table class="w3-table-all w3-margin" >
+                        <thead>
+                            <tr class="w3-light-grey w3-hover-red">
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="w3-hover-green">
+                                <td>Jill</td>
+                                <td>Smith</td>
+                                <td>50</td>
+                            </tr>
+                            <tr class="w3-hover-blue">
+                                <td>Eve</td>
+                                <td>Jackson</td>
+                                <td>94</td>
+                            </tr>
+                            <tr class="w3-hover-black">
+                                <td>Adam</td>
+                                <td>Johnson</td>
+                                <td>67</td>
+                            </tr>
+                            <tr class="w3-hover-text-green">
+                                <td>Bo</td>
+                                <td>Nilson</td>
+                                <td>35</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="" style="float: right">
+                        <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" id="add_row">เพิ่มแถว</button>
+                        <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="remove_row">ลดแถว</button>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -345,7 +390,7 @@
             $('#ans_text').val(sum);
             $('#text-cal').html("หารสำเร็จ");
             setTimeout(() => {
-                $('#text-cal').html("Text");
+                $('#text-tar').html("Text");
             }, 1000);
         });
 
@@ -354,15 +399,16 @@
          */
         $('#btn_star').click(function (e) { 
             var num = prompt("ใส่ค่า")
-            var star
-            for(let i=0;i<num;i++){
+            var star=''
+            for(let i=1;i<=num;i++){
                 for(let j=1; j<=i; j++){
                     star+='*'
                 }
                 star+='<br>'
             }
-            $('#text-cal').html(star);
+            $('#star').html(star);
         });
+
         $(document).ready(function () {
 
         });
