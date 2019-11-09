@@ -107,6 +107,23 @@
             </div>
         </div>
 
+        <div>
+            <button class="accordion w3-cyan"><h2>JavaScript and JQuery</h2></button>
+            <div class="panel">
+                <div class="w3-margin"><h1 id="chg_text">Text</h1></div>
+                <button class="w3-btn w3-round-xxlarge w3-red w3-hover-shadow" id="btn_js">แสดงด้วย JavaScript</button>
+                <button class="w3-btn w3-round-xxlarge w3-pink w3-hover-shadow" id="btn_jq">แสดงด้วย JQuert</button>
+                <button class="w3-btn w3-round-xxlarge w3-pale-blue w3-hover-shadow" id="btn_textChg">แสดง Text</button>
+            </div>
+        </div>
+        
+        <div>
+            <button class="accordion w3-teal"><h2>Change Images</h2></button>
+            <div class="panel">
+                
+            </div>
+        </div>
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -176,6 +193,24 @@
             }
             $('#fruit').html(fruits.toString());
             console.log('มีผลไม้ดังนี้: ' + fruits.toString());
+        });
+
+        /**
+         * ข้อที่ 4
+         */
+        btn_js.onclick = function(){
+            document.getElementById("chg_text").innerHTML = "Hello JavaScript!!"
+            console.log('Hello JavaScript!!')
+        }
+        
+        $("#btn_jq").click(function (e) { 
+            $('#chg_text').html('Hello JQuery!!!');
+            console.log('Hello JQuery!!!')
+        });
+        
+        $("#btn_textChg").click(function (e) { 
+            $('#chg_text').html('Text');
+            console.log('Text')
         });
 
         $(document).ready(function () {
