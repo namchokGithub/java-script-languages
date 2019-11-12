@@ -10,6 +10,26 @@
     </head>
 
     <style>
+        .w3-orange{
+            color: white !important;
+        }
+        
+        .p-t-l{
+            padding-top: 40px !important;
+        }
+
+        .p-t-sm{
+            padding-top: 30px !important;
+        }
+
+        .width-362{
+            width: 362px !important;
+        }
+
+        .margin{
+            margin-left: 90px !important;
+        }
+
         .w3-input{
             width: 300px !important;
         }
@@ -196,7 +216,7 @@
         <!-- **** Table row -->
         <div>
             <button class="accordion w3-khaki"><h2>*** Table row</h2></button>
-            <div class="panel w3-sand">
+            <div class="panel w3-sand" style="display: block" >
                 
                 <div class="w3-section">
                     <div class="w3-container w3-margin">
@@ -212,10 +232,10 @@
                         <table class="w3-table w3-striped w3-border w3-khaki" style="display: none" id="table01">
                             <thead>
                                 <tr class="w3-brown">
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Age</th>
-                                    <th>Operator</th>
+                                    <th class="w3-center">First Name</th>
+                                    <th class="w3-center">Last Name</th>
+                                    <th class="w3-center">Age</th>
+                                    <th class="w3-center">Operator</th>
                                 </tr>
                             </thead>
                             <tbody id="table_data">
@@ -227,24 +247,39 @@
 
                 <div class="w3-section">
                     <div class="w3-container w3-margin">
-                        <h3>Add table 2</h3>
+                        <h3 id="test">Add table 2</h3>
                         <table class="w3-table w3-striped w3-border w3-khaki" >
                             <thead>
                                 <tr class="w3-brown">
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Age</th>
-                                    <th>Operator</th>
+                                    <th class="w3-center">First Name</th>
+                                    <th class="w3-center">Last Name</th>
+                                    <th class="w3-center">Age</th>
+                                    <th class="w3-center width-362">Operator</th>
                                 </tr>
                             </thead>
                             <tbody id="table_data2">
                                 <tr>
-                                    <td><input class="w3-input w3-border w3-section " type="text" name="name_table2" id="name_table2" placeholder="ชื่อ"></td>
-                                    <td><input class="w3-input w3-border w3-section " type="text" name="lname_table2" id="lname_table2" placeholder="นามสกุล"></td>
-                                    <td><input class="w3-input w3-border w3-section " type="number" name="age_text2" id="age_text2"  placeholder="อายุ"></td>
-                                    <td>
+                                    <td class="w3-center"><input class="w3-input w3-border w3-section " type="text" name="name_table2" id="name_table2" placeholder="ชื่อ"></td>
+                                    <td class="w3-center"><input class="w3-input w3-border w3-section " type="text" name="lname_table2" id="lname_table2" placeholder="นามสกุล"></td>
+                                    <td class="w3-center"><input class="w3-input w3-border w3-section " type="number" name="age_text2" id="age_text2"  placeholder="อายุ"></td>
+                                    <td class="w3-center">
                                         <div class="w3-section">
-                                            <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" id="add_table_2">เพิ่ม</button>
+                                            <button class="w3-section w3-btn w3-round-xxlarge w3-green w3-hover-shadow" id="add_table_2">เพิ่ม</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="height: 96px !important">
+                                    <td class="p-t-l">Namchok</td>
+                                    <td class="p-t-l">Singhachai</td>
+                                    <td class="p-t-l">50</td>
+                                    <td class="p-t-sm w3-center">
+                                        <div class="w3-row margin">
+                                            <div class="w3-col s4 w3-center">
+                                                <button class="w3-btn w3-round w3-orange w3-hover-shadow edit">แก้ไข</button>
+                                            </div>
+                                            <div class="w3-col s4 w3-center">
+                                                <button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -614,10 +649,10 @@
             $('#table01').show()
 
             var data = '<tr>'+
-                            '<td>'+name+'</td>'+
-                            '<td>'+last_name+'</td>'+
-                            '<td>'+age+'</td>'+
-                            '<td><button class="w3-btn w3-round w3-red w3-hover-shadow" id="delete_'+index_row+'" onclick="remove(\''+index+'\')">ลบ</button></td>'+
+                            '<td class="w3-center">'+name+'</td>'+
+                            '<td class="w3-center">'+last_name+'</td>'+
+                            '<td class="w3-center">'+age+'</td>'+
+                            '<td class="w3-center"><button class="w3-btn w3-round w3-red w3-hover-shadow" id="delete_'+index_row+'" onclick="remove(\''+index+'\')">ลบ</button></td>'+
                         '</tr>'
             $('#table_data').append(data);
             ++index_row
@@ -639,23 +674,45 @@
             var name = $('#name_table2').val()
             var last_name = $('#lname_table2').val()
             var age = $('#age_text2').val()
-            var data2 = '<tr>'+
-                            '<td>'+name+'</td>'+
-                            '<td>'+last_name+'</td>'+
-                            '<td>'+age+'</td>'+
-                            '<td>'+
-                                '<div>'+
-                                    '<button class="w3-btn w3-round w3-red w3-hover-shadow delete">ลบ</button></td>'+
+            var data = '<tr style="height: 96px !important">'+
+                            '<td class="p-t-l">'+name+'</td>'+
+                            '<td class="p-t-l">'+last_name+'</td>'+
+                            '<td class="p-t-l">'+age+'</td>'+
+                            '<td class="p-t-sm w3-center">'+
+                                '<div class="w3-row margin">'+
+                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-orange w3-hover-shadow edit">แก้ไข</button></div>'+
+                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button></div>'+
                                 '</div>'+
                             '</td>'+
                         '</tr>'
-            $('#table_data2').append(data2)
+            $('#table_data2').append(data)
 
         });
 
         $('body').on('click', 'button.delete', (e)=>{
             $(e.currentTarget).parents().parents("tr").remove()
             console.log('delete2')
+        })
+
+        $('body').on('click', 'button.edit', (e)=>{
+            var name = $(e.currentTarget).closest("tr").children("td:eq(0)").text()
+            var last_name = $(e.currentTarget).closest("tr").children("td:eq(1)").text()
+            var age = $(e.currentTarget).closest("tr").children("td:eq(2)").text()
+            var index = 0
+            var data = '<td><input class="w3-input w3-border w3-section " type="text" name="name_table2" id="name_table2" placeholder="ชื่อ" value="'+name+'"></td>'+
+
+                        '<td><input class="w3-input w3-border w3-section " type="text" name="lname_table2" id="lname_table2" placeholder="นามสกุล" value="'+last_name+'"></td>'+
+
+
+                        '<td><input class="w3-input w3-border w3-section " type="number" name="age_text2" id="age_text2"  placeholder="อายุ" value="'+age+'"></td>'+
+
+                        '<td class="p-t-sm w3-center">'+
+                                '<div class="w3-row margin">'+
+                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-purple w3-hover-shadow edit">แก้ไข</button></div>'+
+                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button></div>'+
+                            '</div>'+
+                        '</td>'
+            $(e.currentTarget).closest("tr").html(data)
         })
 
 
@@ -763,7 +820,7 @@
             
             num1 = $('#radio_num1').val()
             num2 = $('#radio_num2').val()
-            sum=0
+            sum=0 
 
             if(num1==''){
                 alert('ใส่ค่าที่ 1')
@@ -780,7 +837,12 @@
         });
 
         $(document).ready(function () {
-
+            $('html, body').animate({
+                scrollTop: $("#test").offset().top
+            }, 100, function(){
+                window.location.hash = "#test"
+            });
+            
         });
     </script>
 
