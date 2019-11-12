@@ -30,8 +30,17 @@
             margin-left: 90px !important;
         }
 
+        .margin2{
+            margin-left: 135px !important;
+        }
+
         .w3-input{
             width: 300px !important;
+        }
+
+        .w3-input-red {
+            border: red solid 3px !important;
+            background-color: #ffc9c9;
         }
         .accordion {
             background-color: #eee;
@@ -259,16 +268,16 @@
                             </thead>
                             <tbody id="table_data2">
                                 <tr>
-                                    <td class="w3-center"><input class="w3-input w3-border w3-section " type="text" name="name_table2" id="name_table2" placeholder="ชื่อ"></td>
-                                    <td class="w3-center"><input class="w3-input w3-border w3-section " type="text" name="lname_table2" id="lname_table2" placeholder="นามสกุล"></td>
-                                    <td class="w3-center"><input class="w3-input w3-border w3-section " type="number" name="age_text2" id="age_text2"  placeholder="อายุ"></td>
-                                    <td class="w3-center">
+                                    <td class="w3-center"><input style="" class="w3-input w3-border w3-section " type="text" name="name_table2" id="name_table2" placeholder="ชื่อ"></td>
+                                    <td class="w3-center"><input style="" class="w3-input w3-border w3-section " type="text" name="lname_table2" id="lname_table2" placeholder="นามสกุล"></td>
+                                    <td class="w3-center"><input style="" class="w3-input w3-border w3-section " type="number" name="age_text2" id="age_text2"  placeholder="อายุ"></td>
+                                    <td class="w3-center" id="add_tr">
                                         <div class="w3-section">
                                             <button class="w3-section w3-btn w3-round-xxlarge w3-green w3-hover-shadow" id="add_table_2">เพิ่ม</button>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr style="height: 96px !important">
+                                <!-- <tr style="height: 96px !important">
                                     <td class="p-t-l">Namchok</td>
                                     <td class="p-t-l">Singhachai</td>
                                     <td class="p-t-l">50</td>
@@ -282,7 +291,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -670,24 +679,24 @@
          * ข้อที่ 9.2
          */
 
-        $('#add_table_2').click(function (e) { 
-            var name = $('#name_table2').val()
-            var last_name = $('#lname_table2').val()
-            var age = $('#age_text2').val()
-            var data = '<tr style="height: 96px !important">'+
-                            '<td class="p-t-l">'+name+'</td>'+
-                            '<td class="p-t-l">'+last_name+'</td>'+
-                            '<td class="p-t-l">'+age+'</td>'+
-                            '<td class="p-t-sm w3-center">'+
-                                '<div class="w3-row margin">'+
-                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-orange w3-hover-shadow edit">แก้ไข</button></div>'+
-                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button></div>'+
-                                '</div>'+
-                            '</td>'+
-                        '</tr>'
-            $('#table_data2').append(data)
+        // $('#add_table_2').click(function (e) { 
+        //     var name = $('#name_table2').val()
+        //     var last_name = $('#lname_table2').val()
+        //     var age = $('#age_text2').val()
+        //     var data = '<tr style="height: 96px !important">'+
+        //                     '<td class="p-t-l">'+name+'</td>'+
+        //                     '<td class="p-t-l">'+last_name+'</td>'+
+        //                     '<td class="p-t-l">'+age+'</td>'+
+        //                     '<td class="p-t-sm w3-center">'+
+        //                         '<div class="w3-row margin">'+
+        //                             '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-orange w3-hover-shadow edit">แก้ไข</button></div>'+
+        //                             '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button></div>'+
+        //                         '</div>'+
+        //                     '</td>'+
+        //                 '</tr>'
+        //     $('#table_data2').append(data)
 
-        });
+        // });
 
         $('body').on('click', 'button.delete', (e)=>{
             $(e.currentTarget).parents().parents("tr").remove()
@@ -698,22 +707,95 @@
             var name = $(e.currentTarget).closest("tr").children("td:eq(0)").text()
             var last_name = $(e.currentTarget).closest("tr").children("td:eq(1)").text()
             var age = $(e.currentTarget).closest("tr").children("td:eq(2)").text()
-            var index = 0
-            var data = '<td><input class="w3-input w3-border w3-section " type="text" name="name_table2" id="name_table2" placeholder="ชื่อ" value="'+name+'"></td>'+
+            var data = '<td><input class="w3-input w3-border w3-section " type="text" name="name_table2" placeholder="ชื่อ" value="'+name+'"></td>'+
 
-                        '<td><input class="w3-input w3-border w3-section " type="text" name="lname_table2" id="lname_table2" placeholder="นามสกุล" value="'+last_name+'"></td>'+
+                        '<td><input class="w3-input w3-border w3-section " type="text" name="lname_table" placeholder="นามสกุล" value="'+last_name+'"></td>'+
 
 
-                        '<td><input class="w3-input w3-border w3-section " type="number" name="age_text2" id="age_text2"  placeholder="อายุ" value="'+age+'"></td>'+
+                        '<td><input class="w3-input w3-border w3-section " type="number" name="age_text" placeholder="อายุ" value="'+age+'"></td>'+
 
                         '<td class="p-t-sm w3-center">'+
-                                '<div class="w3-row margin">'+
-                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-purple w3-hover-shadow edit">แก้ไข</button></div>'+
-                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button></div>'+
+                                '<div class="w3-row margin2 w3-center">'+
+                                    '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-green w3-hover-shadow success">ยืนยัน</button></div>'+
                             '</div>'+
                         '</td>'
+            $(e.currentTarget).closest("tr").css('height', '96px !important')
             $(e.currentTarget).closest("tr").html(data)
         })
+
+        $('body').on('click', 'button.success', (e)=>{
+            var name = $(e.currentTarget).closest("tr").children("td:eq(0)").children("input").val()
+            var last_name = $(e.currentTarget).closest("tr").children("td:eq(1)").children("input").val()
+            var age = $(e.currentTarget).closest("tr").children("td:eq(2)").children("input").val()
+
+            var data = '<td class="p-t-l">'+name+'</td>'+
+                        '<td class="p-t-l">'+last_name+'</td>'+
+                        '<td class="p-t-l">'+age+'</td>'+
+                        '<td class="p-t-sm w3-center">'+
+                            '<div class="w3-row margin">'+
+                                '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-orange w3-hover-shadow edit">แก้ไข</button></div>'+
+                                '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button></div>'+
+                            '</div>'+
+                        '</td>'
+
+            $(e.currentTarget).closest("tr").css('height', '96px !important')
+            $(e.currentTarget).closest("tr").html(data)
+        })
+
+        $('#add_tr button.w3-green').click(function (e) { 
+           
+            var name = $('#name_table2').val()
+            var last_name = $('#lname_table2').val()
+            var age = $('#age_text2').val()
+
+            if(name=='' || name==' '){
+                alert('Please enter name')
+                $('#name_table2').addClass('w3-input-red')
+            }else if(last_name=='' || last_name==' '){
+                alert('Please enter last name')
+                $('#lname_table2').addClass('w3-input-red')
+            }else if(age=='' || age=='0'){
+                alert('Please enter age')
+                $('#age_text2').addClass('w3-input-red')
+            }else{
+                var name = $('#name_table2').val()
+                var last_name = $('#lname_table2').val()
+                var age = $('#age_text2').val()
+                var data = '<tr style="height: 96px !important">'+
+                                '<td class="p-t-l">'+name+'</td>'+
+                                '<td class="p-t-l">'+last_name+'</td>'+
+                                '<td class="p-t-l">'+age+'</td>'+
+                                '<td class="p-t-sm w3-center">'+
+                                    '<div class="w3-row margin">'+
+                                        '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-orange w3-hover-shadow edit">แก้ไข</button></div>'+
+                                        '<div class="w3-col s4 w3-center"><button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button></div>'+
+                                    '</div>'+
+                                '</td>'+
+                            '</tr>'
+                $('#name_table2').removeClass('w3-input-red')
+                $('#lname_table2').removeClass('w3-input-red')
+                $('#age_text2').removeClass('w3-input-red')
+                $('#table_data2').append(data)
+            }
+            
+        });
+
+        $('#table_data2').mouseover(function (e) { 
+            console.log('mouseover')
+            var name = $('#name_table2').val()
+            var last_name = $('#lname_table2').val()
+            var age = $('#age_text2').val()
+            
+            if(name!='' && name!=' '){
+                $('#name_table2').removeClass('w3-input-red')
+            }
+            if(last_name!='' && last_name!=' '){
+                $('#lname_table2').removeClass('w3-input-red')
+            }
+            if(age!='' && age!='0'){
+                $('#age_text2').removeClass('w3-input-red')
+            }
+        });
 
 
         /**
