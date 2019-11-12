@@ -5,6 +5,7 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="ie=edge" http-equiv="X-UA-Compatible">
         <title>Test JavaScript</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../bear.ico">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
 
@@ -196,28 +197,61 @@
         <div>
             <button class="accordion w3-khaki"><h2>*** Table row</h2></button>
             <div class="panel w3-sand">
-                <div class="w3-container w3-margin">
-                    <div class="w3-section">
-                        <input class="w3-input w3-border w3-section w3-animate-input" type="text" name="name_table" id="name_table" placeholder="ชื่อ">
-                        <input class="w3-input w3-border w3-section w3-animate-input" type="text" name="lname_table" id="lname_table" placeholder="นามสกุล">
-                        <input class="w3-input w3-border w3-animate-input" type="number" name="age_text" id="age_text"  placeholder="อายุ">
-                        <div>
-                            <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" onclick="add_data()">เพิ่ม</button>
+                
+                <div class="w3-section">
+                    <div class="w3-container w3-margin">
+                        <h3>Add table 1</h3>
+                        <div class="w3-section">
+                            <input class="w3-input w3-border w3-section w3-animate-input" type="text" name="name_table" id="name_table" placeholder="ชื่อ">
+                            <input class="w3-input w3-border w3-section w3-animate-input" type="text" name="lname_table" id="lname_table" placeholder="นามสกุล">
+                            <input class="w3-input w3-border w3-animate-input" type="number" name="age_text" id="age_text"  placeholder="อายุ">
+                            <div>
+                                <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow" onclick="add_data()">เพิ่ม</button>
+                            </div>
                         </div>
+                        <table class="w3-table w3-striped w3-border w3-khaki" >
+                            <thead>
+                                <tr class="w3-brown">
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Age</th>
+                                    <th>Operator</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_data">
+                                
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="w3-table w3-striped w3-border w3-khaki" >
-                        <thead>
-                            <tr class="w3-brown">
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Points</th>
-                                <th>Operator</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table_data">
-                            
-                        </tbody>
-                    </table>
+                </div>
+
+                <div class="w3-section">
+                    <div class="w3-container w3-margin">
+                        <h3>Add table 2</h3>
+                        <table class="w3-table w3-striped w3-border w3-khaki" >
+                            <thead>
+                                <tr class="w3-brown">
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Age</th>
+                                    <th>Operator</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_data2">
+                                <tr>
+                                    <td><input class="w3-input w3-border w3-section w3-animate-input" type="text" name="name_table" id="name_table" placeholder="ชื่อ"></td>
+                                    <td><input class="w3-input w3-border w3-section w3-animate-input" type="text" name="lname_table" id="lname_table" placeholder="นามสกุล"></td>
+                                    <td><input class="w3-input w3-border w3-section w3-animate-input" type="number" name="age_text" id="age_text"  placeholder="อายุ"></td>
+                                    <td>
+                                        <div class="w3-section">
+                                            <button class="w3-btn w3-round-xxlarge w3-green w3-hover-shadow">เพิ่ม</button>
+                                            <button class="w3-btn w3-round w3-red w3-hover-shadow">ลบ</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div>
@@ -364,6 +398,7 @@
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
     <script>
         console.log("Hello team 2");
 
@@ -582,7 +617,10 @@
         }
 
         function remove(id){
-            $(id).parents("tr").remove()
+            if($('#table_data tr').length > 1){
+                console.log('delete')
+                $(id).parents("tr").remove()
+            }
         }
 
 
@@ -710,6 +748,7 @@
 
         });
     </script>
+
 </html>
 
 
