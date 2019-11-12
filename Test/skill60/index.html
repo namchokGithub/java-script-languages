@@ -85,11 +85,16 @@
             color: red;
             font-size: 30px;
         }
+        
+        a:visited, a:hover, a:active, a:link{
+            color: white;
+            text-decoration: none;
+        }
     </style>
 
     <body>
-        <div class="w3-container w3-deep-purple">
-            <p class="nav w3-jumbo">JavaScript</p>
+        <div class="w3-container w3-deep-purple" id="test">
+            <p class="nav w3-jumbo"><a href="onfocus.html">JavaScript</a></p>
         </div>
 
         <!-- Variables -->
@@ -256,7 +261,7 @@
 
                 <div class="w3-section">
                     <div class="w3-container w3-margin">
-                        <h3 id="test">Add table 2</h3>
+                        <h3>Add table 2</h3>
                         <table class="w3-table w3-striped w3-border w3-khaki" >
                             <thead>
                                 <tr class="w3-brown">
@@ -277,21 +282,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <!-- <tr style="height: 96px !important">
-                                    <td class="p-t-l">Namchok</td>
-                                    <td class="p-t-l">Singhachai</td>
-                                    <td class="p-t-l">50</td>
-                                    <td class="p-t-sm w3-center">
-                                        <div class="w3-row margin">
-                                            <div class="w3-col s4 w3-center">
-                                                <button class="w3-btn w3-round w3-orange w3-hover-shadow edit">แก้ไข</button>
-                                            </div>
-                                            <div class="w3-col s4 w3-center">
-                                                <button class="w3-btn w3-round w3-red w3-hover-shadow delete w3-margin">ลบ</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr> -->
                             </tbody>
                         </table>
                     </div>
