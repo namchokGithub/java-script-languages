@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <title>Test JavaScript</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../bear.ico">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <style>
+        .w3-orange{
+            color: white !important;
+        }
+        
+        .p-t-l{
+            padding-top: 40px !important;
+        }
+
+        .p-t-sm{
+            padding-top: 30px !important;
+        }
+
+        .width-362{
+            width: 362px !important;
+        }
+
+        .margin{
+            margin-left: 90px !important;
+        }
+
+        .margin2{
+            margin-left: 135px !important;
+        }
+
+        .w3-input{
+            width: 300px !important;
+        }
+
+        .w3-input-red {
+            border: red solid 3px !important;
+            background-color: #ffc9c9;
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc; 
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .nav{
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        .w3-btn{
+            margin-left: 0px !important;
+            margin-top: 5px !important;
+            margin-bottom: 5px !important;
+        }
+
+        .text-name{
+            background-color: pink;
+            border: solid black 1px;
+            color: red;
+            font-size: 30px;
+        }
+
+        a:visited, a:hover, a:active, a:link{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+
+    <body>
+        <div class="w3-container w3-deep-purple" id="test">
+            <p class="nav w3-jumbo"><a href="index.html">JavaScript On focus</a></p>
+        </div>
+
+        <!-- Variables -->
+        <div>
+            <button class="accordion w3-indigo"><h2>No. 1</h2></button>
+            <div class="panel">
+                <h4>Variables</h4>
+                <p>5 บวก 6 เท่ากับ <span id="ans-var"></span></p>
+                <button class="w3-btn w3-round-xxlarge w3-purple w3-hover-shadow" id="cal-var">คำนวณ</button>
+            </div>
+        </div>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+        console.log("Hello team 2");
+        
+        // Nav bar -------------------------------------------------------------------------//
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+        //------------------------------------------------------------------------------------//
+
+        $(document).ready(function () {
+            $('html, body').animate({
+                scrollTop: $("#test").offset().top
+            }, 100, function(){
+                window.location.hash = "#test"
+            });
+        });
+    </script>
+
+</html>
