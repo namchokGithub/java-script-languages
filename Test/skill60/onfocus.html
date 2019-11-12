@@ -101,9 +101,7 @@
         <div>
             <button class="accordion w3-indigo"><h2>No. 1</h2></button>
             <div class="panel">
-                <h4>Variables</h4>
-                <p>5 บวก 6 เท่ากับ <span id="ans-var"></span></p>
-                <button class="w3-btn w3-round-xxlarge w3-purple w3-hover-shadow" id="cal-var">คำนวณ</button>
+                <h4>Table</h4>
             </div>
         </div>
     </body>
@@ -112,22 +110,19 @@
     
     <script>
         console.log("Hello team 2");
-        
-        // Nav bar -------------------------------------------------------------------------//
-        var acc = document.getElementsByClassName("accordion");
-        var i;
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
+        // Nav bar -------------------------------------------------------------------------//
+
+        $('.accordion').click(function (e) { 
+            e.preventDefault();
+            $(this).toggleClass('active')
+            if ($(this).next().css('display') === "block") {
+                $(this).next().css('display', 'none')
+            } else {
+                $(this).next().css('display', 'block')
+            }
+        });
+
         //------------------------------------------------------------------------------------//
 
         $(document).ready(function () {
