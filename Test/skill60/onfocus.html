@@ -354,9 +354,9 @@
                         <div class="w3-row">
 
                             <!-- แสดงค่าจาก Tag select -->
-                            <div class="w3-col l6 w3-section w3-padding-small">
+                            <div class="w3-col l6 w3-section w3-padding-small" id="show_value_from_select">
                                 <h3>แสดงค่าจาก Tag select</h3>
-                                <select class="w3-select w3-border" name="option">
+                                <select class="w3-select w3-border" name="option" id="value_from_select">
                                     <option value="" disabled selected>เลือก</option>
                                     <option value="Melon">Melon</option>
                                     <option value="Coconut">Coconut</option>
@@ -366,7 +366,7 @@
                                 </select>
 
                                 <div class="w3-section">
-                                    <p>ข้อความจาก Tag select: <span id="text_form_select"></span> </p>
+                                    <p>ข้อความจาก Tag select: <span id="text_form_select" class="w3-text-red"></span> </p>
                                 </div>
                             </div>
                             <div class="w3-col l6">
@@ -375,34 +375,36 @@
                             <!-- สิ้นสุดการแสดงค่าจาก Tag select -->
 
                             <!-- บวกค่าจาก Tag select -->
-                            <div class="w3-col l6 w3-section w3-padding-small">
+                            <div class="w3-col l6 w3-section w3-padding-small" id="sum_value_form_select">
                                 <h3>บวกค่าจาก Tag select</h3>
                                 
                                 <div class="w3-row">
                                     <div class="w3-col m6 w3-padding-small">
-                                        <select class="w3-select w3-border" name="option">
+                                        <select class="w3-select w3-border" id="select_number1">
                                             <option value="" disabled selected>เลือกตัวเลข</option>
+                                            <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
-                                            <option value="5">6</option>
+                                            <option value="5">5</option>
                                         </select>
                                     </div>
                                     <div class="w3-col m6 w3-padding-small">
-                                        <select class="w3-select w3-border" name="option">
+                                        <select class="w3-select w3-border" id="select_number2">
                                             <option value="" disabled selected>เลือกตัวเลข</option>
+                                            <option value="0">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
-                                            <option value="5">6</option>
+                                            <option value="5">5</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="w3-section">
-                                    <p>ผลรวม: <span id="text_form_select"></span> </p>
+                                    <p>ผลรวม: <span id="sum_form_select" class="w3-text-red"></span> </p>
                                 </div>
                             </div>
                             <div class="w3-col l6">
@@ -559,7 +561,23 @@
 
         // ข้อที่ 2 --------------------------------------------------------------------------------//
         {
+            /*
+             * ข้อที่ 2.1 แสดงค่าจาก Tag select
+             */
+            $('#show_value_from_select').change(function () { 
+                let text = $('#value_from_select').val()
+                $('#text_form_select').text(text);
+            });
 
+            /*
+             * ข้อที่ 2.2 บวกค่าจาก Tag select
+             */
+            $('#sum_value_form_select').change(function () { 
+                let number1 = $('#select_number1').val()
+                let number2 = $('#select_number2').val()
+                let total = +number1 + +number2
+                $('#sum_form_select').text(total);
+            });
         }
         //----------------------------------------------------------------------------------------//
 
