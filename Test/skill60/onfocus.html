@@ -113,9 +113,7 @@
             padding: auto;
         }
 
-        .box{
-            width: 200px;
-            height: 50px;
+        .box-blank{
             margin: auto;
             padding: auto;
         }
@@ -152,18 +150,34 @@
 
                                     <!-- Tag input -->
                                     <input type="text" name="input_by_tag" value="" placeholder="Tag Input">
-                                    <div id="show_code_by_tag_name" class=""></div>
                                 </div>
                                 <div>
-                                    <button class="w3-btn w3-round-large w3-green" id="btn_set_by_tag">Get value By tag Input</button>
-                                    <button class="w3-btn w3-round-large w3-yellow">Show code</button>
+                                    <button class="w3-btn w3-round-large w3-green" id="btn_set_by_tag">Get value By tag Input (Event)</button><br>
+                                    <button class="w3-btn w3-round-large w3-green" onclick="get_by_tag_input()">Get value By tag Input (function)</button>
                                 </div>
                             </div>
                             <!-- End get value by tag name -->
 
-                            <div class="w3-center w3-col s4">
-                                <h5>Get value By Tag id</h5>
+                            <!-- Get value by Id -->
+                            <div class="w3-center w3-col s4 w3-section">
+                                <h5>Get value By Id</h5>
+                                <div>
+                                    <p>ดึงค่าจากแท็ก Input</p>
+
+                                    <!-- ส่วนของการแสดงข้อความที่ดึงออกมา -->
+                                    <div class="box w3-section ">
+                                        <p id="set_by_id">ข้อความ</p>
+                                    </div>
+
+                                    <!-- Tag input -->
+                                    <input type="text" name="input_by_id" id="input_by_id" value="" placeholder="Id">
+                                </div>
+                                <div>
+                                    <button class="w3-btn w3-round-large w3-green" id="btn_set_by_id">Get value By Id (Event)</button><br>
+                                    <button class="w3-btn w3-round-large w3-green" onclick="get_by_id()">Get value By Id (function)</button>
+                                </div>
                             </div>
+                            <!-- End get value by Id -->
                             <div class="w3-center w3-col s4">
                                 <h5>Get value By Tag class</h5>
                             </div>
@@ -198,13 +212,45 @@
         // ทำงานโดยฟังก์ชัน (JQuery)
         function get_by_tag_input(){                        // ใช้ onclick เพื่แเรียกฟังก์ชัน
             let text = $('input[name=input_by_tag]').val()  // input[name= ชื่อของ input นั้นๆ]
-            $('#set_by_tag').html(text);               // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+            $('#set_by_tag').html(text);                    // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
         }
 
         // ทำงานโดย Event ของ JS (JQuery)
         $('#btn_set_by_tag').click(function () {                // Selector เป็น ID ที่ปุ่ม
-            let text = $('input[name=input_by_tag_name]').val()  // input[name= ชื่อของ input นั้นๆ]
-            $('#set_by_tag_name').html(text);               // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+            let text = $('input[name=input_by_tag]').val()      // input[name= ชื่อของ input นั้นๆ]
+            $('#set_by_tag').html(text);                        // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+        });
+
+        /*
+         * ข้อที่ 1.2 การรับค่าข้อมูลจาก Id
+         */
+
+        // ทำงานโดยฟังก์ชัน (JQuery)
+        function get_by_id(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
+            let text = $('#input_by_id').val()              // input[name= ชื่อของ input นั้นๆ]
+            $('#set_by_id').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+        }
+
+        // ทำงานโดย Event ของ JS (JQuery)
+        $('#btn_set_by_id').click(function () {             // Selector เป็น ID ที่ปุ่ม
+            let text = $('#input_by_id').val()              // input[name= ชื่อของ input นั้นๆ]
+            $('#set_by_id').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+        });
+
+        /*
+         * ข้อที่ 1.2 การรับค่าข้อมูลจาก Class
+         */
+
+        // ทำงานโดยฟังก์ชัน (JQuery)
+        function get_by_class(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
+            let text = $('#input_by_class').val()              // input[name= ชื่อของ input นั้นๆ]
+            $('#set_by_class').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+        }
+
+        // ทำงานโดย Event ของ JS (JQuery)
+        $('#btn_set_by_class').click(function () {             // Selector เป็น ID ที่ปุ่ม
+            let text = $('#input_by_class').val()              // input[name= ชื่อของ input นั้นๆ]
+            $('#set_by_class').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
         });
 
         //----------------------------------------------------------------------------------------//
@@ -230,6 +276,8 @@
         // ---------------------------------------------------------------------------------------//
 
         $(document).ready(function () {
+            $('#show_code_by_tag').hide();
+
             $('html, body').animate({
                 scrollTop: $("#test").offset().top
             }, 100, function(){
