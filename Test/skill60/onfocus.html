@@ -108,6 +108,7 @@
         .box{
             border: black 2px solid;
             width: 200px;
+            height: 100%;
             margin: auto;
             padding: auto;
             word-wrap: break-word;
@@ -303,7 +304,7 @@
                                     </div>
 
                                     <!-- Tag p -->
-                                    <input type="text" id="to_text_p" placeholder="ข้อที่ต้องการเอาไปใส่ Tag p ">
+                                    <input type="text" id="to_text_p" placeholder="ข้อที่ต้องการเอาไปใส่ Tag p">
                                 </div>
                                 <div>
                                     <button class="w3-btn w3-round-large w3-green" id="btn_set_text_to_p">Set text to tag P (Event)</button><br>
@@ -324,11 +325,11 @@
                                     </div>
 
                                     <!-- Tag p -->
-                                    <p id="append_to_text_p">ข้อที่ต้องการเอาไปใส่ต่อ Tag p </p>
+                                    <input type="text" id="to_tappend_to_text_pext_p" placeholder="ข้อที่ต้องการเอาไปใส่ต่อ Tag p ">
                                 </div>
                                 <div>
                                     <button class="w3-btn w3-round-large w3-green" id="btn_append_text_to_p">Append text to tag P (Event)</button><br>
-                                    <button class="w3-btn w3-round-large w3-blue" id="reset_text_p">Reset</button>
+                                    <button class="w3-btn w3-round-large w3-blue" id="reset_text_p_append">Reset</button>
                                 </div>
                             </div>
                             <!-- End append text value in tag p -->
@@ -348,121 +349,142 @@
         console.log("Hello team 2");
 
         // ข้อที่ 1 --------------------------------------------------------------------------------//
-        // Get value
         {
-            /*
-            * ข้อที่ 1.1 การรับค่าข้อมูลจาก Tag input
-            */
-            // ทำงานโดยฟังก์ชัน (JQuery)
-            function get_by_tag_input(){                        // ใช้ onclick เพื่แเรียกฟังก์ชัน
-                let text = $('input[name=input_by_tag]').val()  // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_tag').html(text);                    // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+             // Get value
+            {
+                /*
+                * ข้อที่ 1.1 การรับค่าข้อมูลจาก Tag input
+                */
+                // ทำงานโดยฟังก์ชัน (JQuery)
+                function get_by_tag_input(){                        // ใช้ onclick เพื่แเรียกฟังก์ชัน
+                    let text = $('input[name=input_by_tag]').val()  // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_tag').html(text);                    // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                }
+
+                // ทำงานโดย Event ของ JS (JQuery)
+                $('#btn_set_by_tag').click(function () {                // Selector เป็น ID ที่ปุ่ม
+                    let text = $('input[name=input_by_tag]').val()      // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_tag').html(text);                        // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                });
+
+                /*
+                * ข้อที่ 1.2 การรับค่าข้อมูลจาก Id ใน Tag input
+                */
+
+                // ทำงานโดยฟังก์ชัน (JQuery)
+                function get_by_id(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
+                    let text = $('#input_by_id').val()              // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_id').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                }
+
+                // ทำงานโดย Event ของ JS (JQuery)
+                $('#btn_set_by_id').click(function () {             // Selector เป็น ID ที่ปุ่ม
+                    let text = $('#input_by_id').val()              // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_id').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                });
+
+                /*
+                * ข้อที่ 1.3 การรับค่าข้อมูลจาก Class ใน Tag input
+                */
+
+                // ทำงานโดยฟังก์ชัน (JQuery)
+                function get_by_class(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
+                    let text = $('.input_by_class').val()              // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_class').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                }
+
+                // ทำงานโดย Event ของ JS (JQuery)
+                $('#btn_set_by_class').click(function () {             // Selector เป็น ID ที่ปุ่ม
+                    let text = $('.input_by_class').val()              // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_class').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                });
+
+                /*
+                * ข้อที่ 1.4 การรับค่าข้อมูลจาก Tag P โดย Id
+                */
+
+                // ทำงานโดยฟังก์ชัน (JQuery)
+                function get_by_tag_to_p_id(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
+                    let text = $('#get_by_id_p').text()              // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_id_p').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                }
+
+                // ทำงานโดย Event ของ JS (JQuery)
+                $('#btn_set_by_id_p').click(function () {             // Selector เป็น ID ที่ปุ่ม
+                    let text = $('#get_by_id_p').text()              // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_id_p').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                });
+
+                $('#reset_get_from_p').click(function () { 
+                    $('#set_by_id_p').html('ข้อความ');
+                });
+
+                /*
+                * ข้อที่ 1.5 การรับค่าข้อมูลจาก Tag P โดย Class
+                */
+
+                // ทำงานโดยฟังก์ชัน (JQuery)
+                function get_by_tag_to_p_class(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
+                    let text = $('.get_by_class_p').text()              // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_class_p').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                }
+
+                // ทำงานโดย Event ของ JS (JQuery)
+                $('#btn_set_by_class_p').click(function () {             // Selector เป็น ID ที่ปุ่ม
+                    let text = $('.get_by_class_p').text()              // input[name= ชื่อของ input นั้นๆ]
+                    $('#set_by_class_p').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                });
+
+                $('#reset_get_from_p_class').click(function () { 
+                    $('#set_by_class_p').html('ข้อความ');
+                });
             }
+            
+            // Set value
+            {
+                /*
+                * ข้อที่ 1.6 การกำหนดค่าใน Tag input
+                */
+                // ทำงานโดย Event ของ JS (JQuery)
+                $('#btn_set_value_to_input').click(function () { 
+                    let value = $('#to_value_input').val()
+                    $('#set_value_input').val(value)
+                });
 
-            // ทำงานโดย Event ของ JS (JQuery)
-            $('#btn_set_by_tag').click(function () {                // Selector เป็น ID ที่ปุ่ม
-                let text = $('input[name=input_by_tag]').val()      // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_tag').html(text);                        // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
-            });
+                /*
+                * ข้อที่ 1.7 การกำหนดข้อความใน Tag p
+                */
+                // ทำงานโดย Event ของ JS (JQuery)
+                $('#btn_set_text_to_p').click(function () { 
+                    let value = $('#to_text_p').val()
+                    $('#set_text_p').text(value) // .text จะเอาแค่ข้อความ
+                    // $('#set_text_p').html(value) // .html จะเอา Tag html มาด้วย
+                });
 
-            /*
-            * ข้อที่ 1.2 การรับค่าข้อมูลจาก Id ใน Tag input
-            */
+                // Reset text p
+                $('#reset_text_p').click(function () { 
+                    $('#set_text_p').empty()
+                });
 
-            // ทำงานโดยฟังก์ชัน (JQuery)
-            function get_by_id(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
-                let text = $('#input_by_id').val()              // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_id').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
+                /*
+                * ข้อที่ 1.8 การต่อข้อความใน Tag p
+                */
+                // ทำงานโดย Event ของ JS (JQuery)
+                $('#btn_append_text_to_p').click(function () { 
+                    let value = $('#to_tappend_to_text_pext_p').val()
+                    $('#append_text_p').append(value)
+                });
+
+                // Reset text p
+                $('#reset_text_p_append').click(function () { 
+                    $('#append_text_p').empty()
+                });
             }
-
-            // ทำงานโดย Event ของ JS (JQuery)
-            $('#btn_set_by_id').click(function () {             // Selector เป็น ID ที่ปุ่ม
-                let text = $('#input_by_id').val()              // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_id').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
-            });
-
-            /*
-            * ข้อที่ 1.3 การรับค่าข้อมูลจาก Class ใน Tag input
-            */
-
-            // ทำงานโดยฟังก์ชัน (JQuery)
-            function get_by_class(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
-                let text = $('.input_by_class').val()              // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_class').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
-            }
-
-            // ทำงานโดย Event ของ JS (JQuery)
-            $('#btn_set_by_class').click(function () {             // Selector เป็น ID ที่ปุ่ม
-                let text = $('.input_by_class').val()              // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_class').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
-            });
-
-            /*
-            * ข้อที่ 1.4 การรับค่าข้อมูลจาก Tag P โดย Id
-            */
-
-            // ทำงานโดยฟังก์ชัน (JQuery)
-            function get_by_tag_to_p_id(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
-                let text = $('#get_by_id_p').text()              // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_id_p').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
-            }
-
-            // ทำงานโดย Event ของ JS (JQuery)
-            $('#btn_set_by_id_p').click(function () {             // Selector เป็น ID ที่ปุ่ม
-                let text = $('#get_by_id_p').text()              // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_id_p').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
-            });
-
-            $('#reset_get_from_p').click(function () { 
-                $('#set_by_id_p').html('ข้อความ');
-            });
-
-            /*
-            * ข้อที่ 1.5 การรับค่าข้อมูลจาก Tag P โดย Class
-            */
-
-            // ทำงานโดยฟังก์ชัน (JQuery)
-            function get_by_tag_to_p_class(){                               // ใช้ onclick เพื่แเรียกฟังก์ชัน
-                let text = $('.get_by_class_p').text()              // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_class_p').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
-            }
-
-            // ทำงานโดย Event ของ JS (JQuery)
-            $('#btn_set_by_class_p').click(function () {             // Selector เป็น ID ที่ปุ่ม
-                let text = $('.get_by_class_p').text()              // input[name= ชื่อของ input นั้นๆ]
-                $('#set_by_class_p').html(text);                     // แทนที่ข้อความทั้งหมดจาก Selector ที่เลือก
-            });
-
-            $('#reset_get_from_p_class').click(function () { 
-                $('#set_by_class_p').html('ข้อความ');
-            });
         }
-        
-        // Set value
-        {
-            /*
-            * ข้อที่ 1.6 การกำหนดค่าใน Tag input
-            */
-            // ทำงานโดย Event ของ JS (JQuery)
-            $('#btn_set_value_to_input').click(function () { 
-                let value = $('#to_value_input').val()
-                $('#set_value_input').val(value)
-            });
-
-            /*
-            * ข้อที่ 1.7 การกำหนดข้อความใน Tag p
-            */
-            // ทำงานโดย Event ของ JS (JQuery)
-            $('#btn_set_value_to_input').click(function () { 
-                let value = $('#to_value_input').val()
-                $('#set_value_input').val(value)
-            });
-        }
-
-
         //----------------------------------------------------------------------------------------//
-        
 
+        // ข้อที่ 2 --------------------------------------------------------------------------------//
+        //----------------------------------------------------------------------------------------//
 
         // Nav bar -------------------------------------------------------------------------------//
         $('.accordion').click(function (e) { 
