@@ -422,11 +422,11 @@
                     <div class="w3-col l6 w3-section w3-padding-small" id="show_value_from_checkbox">
                         <h3>แสดงค่าจาก Checkbox</h3>
                         <div>
-                            <input class="w3-check" type="checkbox" value="I">
+                            <input class="w3-radio" type="checkbox" value="I" name="word">
                             <label>I</label>
-                            <input class="w3-check" type="checkbox" value="drink">
+                            <input class="w3-radio" type="checkbox" value="drink" name="word">
                             <label>drink</label>
-                            <input class="w3-check" type="checkbox" value="tea">
+                            <input class="w3-radio" type="checkbox" value="tea" name="word">
                             <label>tea</label>
                         </div>
 
@@ -440,11 +440,11 @@
                     <div class="w3-col l6 w3-section w3-padding-small" id="show_value_from_radio">
                         <h3>แสดงค่าจาก Radio</h3>
                         <div>
-                            <input class="w3-radio" type="radio" value="Coffee">
+                            <input class="w3-radio" type="radio" value="Coffee" name="drink">
                             <label>Coffee</label>
-                            <input class="w3-radio" type="radio" value="Milk">
+                            <input class="w3-radio" type="radio" value="Milk" name="drink">
                             <label>Milk</label>
-                            <input class="w3-radio" type="radio" value="Tea">
+                            <input class="w3-radio" type="radio" value="Tea" name="drink">
                             <label>Tea</label>
                         </div>
 
@@ -623,6 +623,35 @@
         }
         //----------------------------------------------------------------------------------------//
 
+        // ข้อที่ 3 --------------------------------------------------------------------------------//
+        {
+            /*
+             * ข้อที่ 3.1 แสดงค่าจาก Tag Checkbox
+             */
+            $('#show_value_from_checkbox').click(function () {
+                let text1='', text2='', text3=''
+                if($('input[name=word]:eq(0)').is(':checked')==true){
+                    text1=$('input[name=word]:eq(0)').val()
+                }
+                if($('input[name=word]:eq(1)').is(':checked')==true){
+                    text2=$('input[name=word]:eq(1)').val()
+                }
+                if($('input[name=word]:eq(2)').is(':checked')==true){
+                    text3=$('input[name=word]:eq(2)').val()
+                }
+                $('#text_form_checkbox').text(text1+' '+text2+' '+text3);
+            });
+
+            /*
+             * ข้อที่ 3.2 บวกค่าจาก Tag Radio
+             */
+            $('#show_value_from_radio').click(function () { 
+                let text = $('input[name=drink]:checked').val()
+                $('#text_form_radio').text(text);
+            });
+        }
+        //----------------------------------------------------------------------------------------//
+
         // Nav bar -------------------------------------------------------------------------------//
         $('.accordion').click(function (e) { 
             e.preventDefault();
@@ -650,9 +679,9 @@
                 window.location.hash = "#test"
             });
 
-            $("input").focus(function() { 
-                $(this).val('')
-            }); 
+            // $("input").focus(function() { 
+            //     $(this).val('')
+            // }); 
         });
     </script>
 
