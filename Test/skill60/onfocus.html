@@ -118,6 +118,14 @@
             margin: auto;
             padding: auto;
         }
+
+        .p-t-sm{
+            padding-top: 8px !important;
+        }
+
+        .p-t-l{
+            padding-top: 40px !important;
+        }
     </style>
 
     <body>
@@ -464,7 +472,7 @@
         <div>
             <button class="accordion w3-green"><h2>No. 4</h2></button>
             <div class="panel">
-                <div class="w3-row w3-padding ">
+                <div class="w3-row w3-padding">
 
                     <!-- แสดงค่าจาก Checkbox -->
                     <div class="w3-section w3-padding-small">
@@ -484,7 +492,7 @@
                                         <td class="w3-center"><input class="w3-input w3-border w3-section " type="text" name="name_table" id="name_table" placeholder="ชื่อ"></td>
                                         <td class="w3-center"><input class="w3-input w3-border w3-section " type="text" name="lname_table" id="lname_table" placeholder="นามสกุล"></td>
                                         <td class="w3-center"><input class="w3-input w3-border w3-section " type="number" name="age_text" id="age_text" placeholder="อายุ"></td>
-                                        <td class="w3-center" id="add_tr">
+                                        <td class="w3-center">
                                             <div class="w3-section">
                                                 <button class="w3-section w3-btn w3-round-large w3-green w3-hover-shadow" id="add_table">เพิ่ม</button>
                                             </div>
@@ -699,26 +707,25 @@
              * ข้อที่ 4 เพิ่มแถวในตาราง
              */
             $('#add_table').click(function () { 
-                var name = $('#name_table').val()
-                var last_name = $('#lname_table').val()
-                var age = $('#age_text').val()
-                var data = '<tr style="height: 96px !important">'+
+                let name = $('#name_table').val()
+                let last_name = $('#lname_table').val()
+                let age = $('#age_text').val()
+                let data = '<tr style="height: 96px !important">'+
                                 '<td class="p-t-l">'+name+'</td>'+
                                 '<td class="p-t-l">'+last_name+'</td>'+
                                 '<td class="p-t-l">'+age+'</td>'+
-                                '<td class="p-t-sm w3-center">'+
-                                    '<div class="w3-row margin">'+
-                                        '<button class="w3-btn w3-round w3-red w3-hover-shadow w3-margin" id="delete">ลบ</button>'+
+                                '<td class="w3-center">'+
+                                    '<div class="w3-section">'+
+                                        '<button class="w3-btn w3-round w3-red w3-hover-shadow w3-margin delete">ลบ</button>'+
                                     '</div>'+
                                 '</td>'+
                             '</tr>'
                 $('#table_data').append(data)
             });
 
-            $('#delete').click(function () { 
-                console.log('delete')
-                $(this).closest("tr").remove()
-            });
+            $('body').on('click', '.delete', (e)=>{
+                $(e.currentTarget).closest("tr").remove()
+            })
         }
         //----------------------------------------------------------------------------------------//
 
