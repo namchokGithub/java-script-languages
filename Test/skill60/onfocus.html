@@ -125,13 +125,13 @@
             <p class="nav w3-xxxlarge"><a href="index.html">JavaScript On focus <span class="w3-xxlarge">(JQuery)</span></a></p>
         </div>
 
-        <!-- Variables -->
+        <!-- Get Set -->
         <div>
             <button class="accordion w3-indigo"><h2>No. 1</h2></button>
             <div class="panel no-panel">
 
             <!-- No. 1 -->
-                <!-- Get value -->
+            <!-- Get value -->
                 <!-- Get value from tag input -->
                 <div>
                     <button class="accordion w3-light-indigo"><h2>Get value from tag Input</h2></button>
@@ -262,83 +262,157 @@
                     </div>
                 </div>
                 <!-- End get value from tag p -->
-                <!-- End get value -->
+            <!-- End get value -->
 
-                
-                <!-- Set value -->
-                
+            <!-- Set value -->
+            <div>
+                <button class="accordion w3-light-indigo"><h2>Set value</h2></button>
+                <div class="panel">
+                    <div class="w3-row">
+
+                        <!-- Set value in tag input -->
+                        <div class="w3-center w3-col s4 w3-section">
+                            <h5>Set value in tag Input</h5>
+                            <div>
+                                <p>กำหนดค่าใน Tag input</p>
+
+                                <!-- ส่วนของการแสดงข้อความ -->
+                                <div class="w3-section ">
+                                    <input type="text" id="set_value_input" name="set_value_input" value="" disabled>
+                                </div>
+
+                                <!-- Tag p -->
+                                <input type="text" id="to_value_input" placeholder="Value ที่ต้องการ">
+                            </div>
+                            <div>
+                                <button class="w3-btn w3-round-large w3-green" id="btn_set_value_to_input">Set value to tag Input (Event)</button><br>
+                            </div>
+                        </div>
+                        <!-- End set value in tag input -->
+
+                        <!-- Set text in tag p -->
+                        <div class="w3-center w3-col s4 w3-section">
+                            <h5>Set text in tag p</h5>
+                            <div>
+                                <p>กำหนดข้อความใน Tag p</p>
+
+                                <!-- ส่วนของการแสดงข้อความ -->
+                                <div class="box w3-section ">
+                                    <p id="set_text_p"></p>
+                                </div>
+
+                                <!-- Tag p -->
+                                <input type="text" id="to_text_p" placeholder="ข้อที่ต้องการเอาไปใส่ Tag p">
+                            </div>
+                            <div>
+                                <button class="w3-btn w3-round-large w3-green" id="btn_set_text_to_p">Set text to tag P (Event)</button><br>
+                                <button class="w3-btn w3-round-large w3-blue" id="reset_text_p">Reset</button>
+                            </div>
+                        </div>
+                        <!-- End set text in tag p -->
+
+                        <!-- Append text in tag p -->
+                        <div class="w3-center w3-col s4 w3-section">
+                            <h5>Append text in tag p</h5>
+                            <div>
+                                <p>ต่อข้อความใน Tag p</p>
+
+                                <!-- ส่วนของการแสดงข้อความ -->
+                                <div class="box w3-section ">
+                                    <p id="append_text_p"></p>
+                                </div>
+
+                                <!-- Tag p -->
+                                <input type="text" id="to_tappend_to_text_pext_p" placeholder="ข้อที่ต้องการเอาไปใส่ต่อ Tag p ">
+                            </div>
+                            <div>
+                                <button class="w3-btn w3-round-large w3-green" id="btn_append_text_to_p">Append text to tag P (Event)</button><br>
+                                <button class="w3-btn w3-round-large w3-blue" id="reset_text_p_append">Reset</button>
+                            </div>
+                        </div>
+                        <!-- End append text value in tag p -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- End set value -->
+            <!-- End No. 1 -->
+
+            <!-- No. 2 -->
+
+            <!-- End No. 2 -->
+            </div>
+        </div>
+
+        <!-- Get Set -->
+        <div>
+            <button class="accordion w3-blue"><h2>No. 2</h2></button>
+            <div class="panel no-panel">
                 <div>
-                    <button class="accordion w3-light-indigo"><h2>Set value</h2></button>
+                    <button class="accordion w3-light-blue"><h2>Get value from Dropdown</h2></button>
                     <div class="panel">
                         <div class="w3-row">
 
-                            <!-- Set value in tag input -->
-                            <div class="w3-center w3-col s4 w3-section">
-                                <h5>Set value in tag Input</h5>
-                                <div>
-                                    <p>กำหนดค่าใน Tag input</p>
+                            <!-- แสดงค่าจาก Tag select -->
+                            <div class="w3-col l6 w3-section w3-padding-small">
+                                <h3>แสดงค่าจาก Tag select</h3>
+                                <select class="w3-select w3-border" name="option">
+                                    <option value="" disabled selected>เลือก</option>
+                                    <option value="Melon">Melon</option>
+                                    <option value="Coconut">Coconut</option>
+                                    <option value="Lemon">Lemon</option>
+                                    <option value="Grape">Grape</option>
+                                    <option value="Banana">Banana</option>
+                                </select>
 
-                                    <!-- ส่วนของการแสดงข้อความ -->
-                                    <div class="w3-section ">
-                                        <input type="text" id="set_value_input" name="set_value_input" value="" disabled>
-                                    </div>
-
-                                    <!-- Tag p -->
-                                    <input type="text" id="to_value_input" placeholder="Value ที่ต้องการ">
-                                </div>
-                                <div>
-                                    <button class="w3-btn w3-round-large w3-green" id="btn_set_value_to_input">Set value to tag Input (Event)</button><br>
+                                <div class="w3-section">
+                                    <p>ข้อความจาก Tag select: <span id="text_form_select"></span> </p>
                                 </div>
                             </div>
-                            <!-- End set value in tag input -->
+                            <div class="w3-col l6">
 
-                            <!-- Set text in tag p -->
-                            <div class="w3-center w3-col s4 w3-section">
-                                <h5>Set text in tag p</h5>
-                                <div>
-                                    <p>กำหนดข้อความใน Tag p</p>
+                            </div>
+                            <!-- สิ้นสุดการแสดงค่าจาก Tag select -->
 
-                                    <!-- ส่วนของการแสดงข้อความ -->
-                                    <div class="box w3-section ">
-                                        <p id="set_text_p"></p>
+                            <!-- บวกค่าจาก Tag select -->
+                            <div class="w3-col l6 w3-section w3-padding-small">
+                                <h3>บวกค่าจาก Tag select</h3>
+                                
+                                <div class="w3-row">
+                                    <div class="w3-col m6 w3-padding-small">
+                                        <select class="w3-select w3-border" name="option">
+                                            <option value="" disabled selected>เลือกตัวเลข</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">6</option>
+                                        </select>
                                     </div>
-
-                                    <!-- Tag p -->
-                                    <input type="text" id="to_text_p" placeholder="ข้อที่ต้องการเอาไปใส่ Tag p">
+                                    <div class="w3-col m6 w3-padding-small">
+                                        <select class="w3-select w3-border" name="option">
+                                            <option value="" disabled selected>เลือกตัวเลข</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">6</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div>
-                                    <button class="w3-btn w3-round-large w3-green" id="btn_set_text_to_p">Set text to tag P (Event)</button><br>
-                                    <button class="w3-btn w3-round-large w3-blue" id="reset_text_p">Reset</button>
+
+                                <div class="w3-section">
+                                    <p>ผลรวม: <span id="text_form_select"></span> </p>
                                 </div>
                             </div>
-                            <!-- End set text in tag p -->
+                            <div class="w3-col l6">
 
-                            <!-- Append text in tag p -->
-                            <div class="w3-center w3-col s4 w3-section">
-                                <h5>Append text in tag p</h5>
-                                <div>
-                                    <p>ต่อข้อความใน Tag p</p>
-
-                                    <!-- ส่วนของการแสดงข้อความ -->
-                                    <div class="box w3-section ">
-                                        <p id="append_text_p"></p>
-                                    </div>
-
-                                    <!-- Tag p -->
-                                    <input type="text" id="to_tappend_to_text_pext_p" placeholder="ข้อที่ต้องการเอาไปใส่ต่อ Tag p ">
-                                </div>
-                                <div>
-                                    <button class="w3-btn w3-round-large w3-green" id="btn_append_text_to_p">Append text to tag P (Event)</button><br>
-                                    <button class="w3-btn w3-round-large w3-blue" id="reset_text_p_append">Reset</button>
-                                </div>
                             </div>
-                            <!-- End append text value in tag p -->
+                            <!-- สิ้นสุดการแสดงค่าจาก Tag select -->
 
                         </div>
                     </div>
                 </div>
-                <!-- End set value -->
-
             </div>
         </div>
     </body>
@@ -484,6 +558,9 @@
         //----------------------------------------------------------------------------------------//
 
         // ข้อที่ 2 --------------------------------------------------------------------------------//
+        {
+
+        }
         //----------------------------------------------------------------------------------------//
 
         // Nav bar -------------------------------------------------------------------------------//
