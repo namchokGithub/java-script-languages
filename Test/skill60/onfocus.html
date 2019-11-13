@@ -125,12 +125,12 @@
             <p class="nav w3-xxxlarge"><a href="index.html">JavaScript On focus <span class="w3-xxlarge">(JQuery)</span></a></p>
         </div>
 
+        <!-- No. 1 -->
         <!-- Get Set -->
         <div>
             <button class="accordion w3-indigo"><h2>No. 1</h2></button>
             <div class="panel no-panel">
 
-            <!-- No. 1 -->
             <!-- Get value -->
                 <!-- Get value from tag input -->
                 <div>
@@ -336,15 +336,13 @@
                 </div>
             </div>
             <!-- End set value -->
-            <!-- End No. 1 -->
 
-            <!-- No. 2 -->
-
-            <!-- End No. 2 -->
             </div>
         </div>
+       <!-- End No. 1 -->
 
-        <!-- Get Set -->
+        <!-- No. 2 -->
+        <!-- value from Dropdown -->
         <div>
             <button class="accordion w3-blue"><h2>No. 2</h2></button>
             <div class="panel no-panel">
@@ -368,9 +366,6 @@
                                 <div class="w3-section">
                                     <p>ข้อความจาก Tag select: <span id="text_form_select" class="w3-text-red"></span> </p>
                                 </div>
-                            </div>
-                            <div class="w3-col l6">
-
                             </div>
                             <!-- สิ้นสุดการแสดงค่าจาก Tag select -->
 
@@ -407,9 +402,6 @@
                                     <p>ผลรวม: <span id="sum_form_select" class="w3-text-red"></span> </p>
                                 </div>
                             </div>
-                            <div class="w3-col l6">
-
-                            </div>
                             <!-- สิ้นสุดการแสดงค่าจาก Tag select -->
 
                         </div>
@@ -417,6 +409,56 @@
                 </div>
             </div>
         </div>
+        <!-- End No. 2 -->
+
+        <!-- No. 3 -->
+        <!-- value from Checkbox and radio -->
+        <div>
+            <button class="accordion w3-teal"><h2>No. 3</h2></button>
+            <div class="panel">
+                <div class="w3-row w3-padding">
+
+                    <!-- แสดงค่าจาก Checkbox -->
+                    <div class="w3-col l6 w3-section w3-padding-small" id="show_value_from_checkbox">
+                        <h3>แสดงค่าจาก Checkbox</h3>
+                        <div>
+                            <input class="w3-check" type="checkbox" value="I">
+                            <label>I</label>
+                            <input class="w3-check" type="checkbox" value="drink">
+                            <label>drink</label>
+                            <input class="w3-check" type="checkbox" value="tea">
+                            <label>tea</label>
+                        </div>
+
+                        <div class="w3-section">
+                            <p>ข้อความจาก Checkbox: <span id="text_form_checkbox" class="w3-text-red"></span> </p>
+                        </div>
+                    </div>
+                    <!-- สิ้นสุดการแสดงค่าจาก Tag checkbox -->
+
+                    <!-- แสดงค่าจาก Radio -->
+                    <div class="w3-col l6 w3-section w3-padding-small" id="show_value_from_radio">
+                        <h3>แสดงค่าจาก Radio</h3>
+                        <div>
+                            <input class="w3-radio" type="radio" value="Coffee">
+                            <label>Coffee</label>
+                            <input class="w3-radio" type="radio" value="Milk">
+                            <label>Milk</label>
+                            <input class="w3-radio" type="radio" value="Tea">
+                            <label>Tea</label>
+                        </div>
+
+                        <div class="w3-section">
+                            <p>ข้อความจาก Radio: <span id="text_form_radio" class="w3-text-red"></span> </p>
+                        </div>
+                    </div>
+                    <!-- สิ้นสุดการแสดงค่าจาก Tag Radio -->
+
+                </div>
+            </div>
+        </div>
+        <!-- End No. 3 -->
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
